@@ -1,0 +1,69 @@
+@font-face {
+    font-family: koz;
+    src: url(../fonts/koz-l.otf);
+}
+
+body, html, #main, #top {
+  width: 100vw;
+  height: 100vh;
+}
+
+#name-container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-family: koz, Helvetica, Arial;
+  width: 500px;
+  height: 250px;
+  transform: translateX(-50%) translateY(-50%);
+  display: grid;
+  grid-template-columns: repeat(10, 50px);
+  grid-template-rows: repeat(2, 125px);
+}
+
+.name p{
+  line-height: 125px;
+  font-size: 36pt;
+  margin: auto;
+}
+
+.name-en{
+  text-align: left;
+  border-right: 1px dashed #000;
+  color: #FFF;
+}
+
+.name-jp{
+  text-align: right;
+  color: #FFF;
+}
+
+#first-en{
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  border-bottom: 1px dashed #000;
+}
+
+#last-jp{
+  grid-column-start: 5;
+  grid-column-end: 11;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  border-bottom: 1px dashed #000;
+}
+
+#last-en{
+  grid-column-start: 1;
+  grid-column-end: 7;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+#first-jp{
+  grid-column-start: 7;
+  grid-column-end: 11;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}

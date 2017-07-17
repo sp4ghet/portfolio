@@ -1,0 +1,24 @@
+{
+  "name": "rikuo_portfolio",
+  "version": "0.0.1",
+  "description": "Portfolio page for Rikuo Hasegawa",
+  "repository": "https://github.com/Spaghet/portfolio",
+  "scripts": {
+    "build": "webpack",
+    "postbuild": "cp -r assets/ dist/",
+    "watch": "webpack --watch",
+    "dev": "webpack-dev-server --port 3000"
+  },
+  "author": "Rikuo Hasegawa",
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "^0.28.4",
+    "elm-webpack-loader": "^4.3.1",
+    "file-loader": "^0.11.2",
+    "style-loader": "^0.18.2",
+    "url-loader": "^0.5.9",
+    "webpack": "^1.15.0",
+    "webpack-dev-middleware": "^1.11.0",
+    "webpack-dev-server": "^1.16.5"
+  }
+}
