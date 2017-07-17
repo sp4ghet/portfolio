@@ -8,15 +8,62 @@ body, html, #main, #top {
   height: 100vh;
 }
 
-#name-container{
+a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+a:hover{
+  color: #CCC;
+}
+
+.container {
   position: absolute;
-  top: 50%;
-  left: 50%;
   font-family: koz, Helvetica, Arial;
-  width: 500px;
-  height: 250px;
+  width: 25%;
+  height: 22.22%;
   transform: translateX(-50%) translateY(-50%);
   display: grid;
+}
+
+.tab-logo {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    height: 100%;
+    width: 100%;
+}
+
+.tab-text{
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  line-height: 125px;
+  margin: auto;
+  font-size: 36pt;
+  font-size: 4vh;
+}
+
+.tab-en{
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.tab-jp{
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+/*name*/
+
+#name{
+  top: 50%;
+  left: 50%;
   grid-template-columns: repeat(10, 50px);
   grid-template-rows: repeat(2, 125px);
 }
@@ -24,6 +71,7 @@ body, html, #main, #top {
 .name p{
   line-height: 125px;
   font-size: 36pt;
+  font-size: 4vh;
   margin: auto;
 }
 
@@ -68,8 +116,30 @@ body, html, #main, #top {
   grid-row-end: 3;
 }
 
+/*works*/
+
 #works{
-  position: absolute;
-  top: 66.66%;
-  left: 12.5%;
+  top: 77.77%;
+  left: 21.875%;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(2, 50%);
+}
+
+/*blog*/
+
+#blog{
+  width: 18.75%;
+  top: 77.77%;
+  left: 46.875%;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(2, 50%);
+}
+
+/*about*/
+
+#about{
+  top: 77.77%;
+  left: 75%;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(2, 50%);
 }

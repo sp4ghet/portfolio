@@ -3,9 +3,9 @@ module Top.Styling exposing (radialCosineGradient)
 import Html.Attributes exposing (style)
 import Html exposing (Attribute)
 
-radialCosineGradient : List (List Float) -> Attribute msg
-radialCosineGradient x = style [
-  ("background", "radial-gradient(circle at top left," ++ (cosineGradient x) ++ ")")
+radialCosineGradient : List (List Float) -> String -> Attribute msg
+radialCosineGradient waveforms position = style [
+  ("background", "radial-gradient(circle at " ++ position ++ "," ++ (cosineGradient waveforms) ++ ")")
   ]
 
 cosineGradient : List (List Float) -> String
