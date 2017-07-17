@@ -45,8 +45,7 @@ nameItem id_ class_ content = div [
 works : Html Msg
 works = div
   [
-  id "works",
-  onClick Works
+  id "works"
   ] [
-  text "Works"
+  a [href "#works"] [text "Works"]
   ]

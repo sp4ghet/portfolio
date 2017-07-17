@@ -1,8 +1,8 @@
-module Top.State exposing (init, update)
+module Works.State exposing (init, update)
 
-import Debug exposing (log)
-import Top.Types exposing (..)
+import Works.Types exposing (..)
 
+init : Model
 init = Model 0
 
 update : Msg -> Model -> (Model, Cmd msg)

@@ -1,14 +1,15 @@
 module App exposing (main)
 
 import Html
+import Navigation
 import State
 import View
 import Types exposing (..)
 
 main : Program Never Model Msg
 main =
-    Html.program
-        { init = (State.init, Cmd.none)
+     Navigation.program OnLocationChange
+        { init = State.init
         , update = State.update
         , view = View.root
         , subscriptions = (always Sub.none)
