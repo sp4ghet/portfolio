@@ -4,6 +4,7 @@
   "description": "Portfolio page for Rikuo Hasegawa",
   "repository": "https://github.com/Spaghet/portfolio",
   "scripts": {
+    "prebuild": "rm -rf dist/ && mkdir dist",
     "build": "webpack",
     "postbuild": "cp -r assets/ dist/",
     "watch": "webpack --watch",
