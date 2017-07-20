@@ -2,6 +2,8 @@ module Top.View exposing (root)
 
 import Top.Types exposing (..)
 import Top.Styling exposing (..)
+import Common.Styling exposing (..)
+import Common.ViewComponents exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
@@ -13,65 +15,33 @@ root : Model -> Html Msg
 root model =
   div [
     id "top",
+    topContainerStyle,
     radialCosineGradient waveform "top left"
     ] [
-    name
-    ,works
-    ,blog
-    ,about
+    div
+      [nameContainerStyle]
+      [
+      name
+      ]
+    ,div
+      [tabsContainerStyle]
+      [
+      works
+      ,blog
+      ,about
+      ]
     ]
 
--- Container base
-container : String -> String -> String -> String -> String -> Html Msg
-container id_ imgUrl href_ englishText japaneseText = div
-  [
-  id id_
-  ,class "container"
-  ,radialCosineGradient waveform "bottom right"
-  ] [
-  img [
-    src imgUrl
-    ,alt id_
-    ,class "tab-logo"
-  ] []
-  ,a [
-      href href_
-      ,class "tab-en"
-      ,class "tab-text"
-      ] [text englishText]
-  ,a [
-      href href_
-      ,class "tab-jp"
-      ,class "tab-text"
-      ] [text japaneseText]
-  ]
 -- NAME
 
 name : Html Msg
-name = div [
-  id "name",
-  class "container"
-  ] [
-  nameItem "first-en" "name-en" "Rikuo",
-  nameItem "last-en" "name-en" "Hasegawa",
-  nameItem "last-jp" "name-jp" "長谷川",
-  nameItem "first-jp" "name-jp" "陸央"
-  ]
-
-nameItem : String -> String -> String -> Html msg
-nameItem id_ class_ content = div [
-  id id_,
-  class class_,
-  class "name"
-  ] [
-  p [] [text content]
-  ]
+name = nameBase [id "name", class "tab", nameStyle]
 
 -- WORKS
 
 works : Html Msg
-works = container
-  "works"
+works = tab
+  [id "works", worksStyle]
   "assets/img/works.png"
   "#works"
   "Works"
@@ -80,8 +50,8 @@ works = container
 -- Blog
 
 blog : Html Msg
-blog = container
-  "blog"
+blog = tab
+  [id "blog", blogStyle]
   "assets/img/blog.png"
   "https://goonytoons.com/blog"
   "Blog"
@@ -90,8 +60,8 @@ blog = container
 -- About me
 
 about : Html Msg
-about = container
-  "about"
+about = tab
+  [id "about", aboutStyle]
   "assets/img/about.png"
   "#about"
   "About Me"
