@@ -1,9 +1,8 @@
 module Top.State exposing (init, update)
 
-import Debug exposing (log)
 import Top.Types exposing (..)
 
-init = Model 0
+init = Model
 
 update : Msg -> Model -> (Model, Cmd msg)
 update msg model =

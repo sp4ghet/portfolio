@@ -1,5 +1,7 @@
 @font-face {
     font-family: koz;
+    font-style: normal;
+    font-weight: 400;
     src: url(../fonts/koz-l.otf);
 }
 
@@ -12,6 +14,10 @@ body {
   height: 100%;
   position: absolute;
   background-color: #000;
+}
+
+p, h1, h2, h3, h4, h5, h6, a{
+  font-family: koz, Helvetica, sans-serif;
 }
 
 #main{
@@ -30,7 +36,7 @@ a {
 }
 
 .tab {
-  font-family: koz, Helvetica, Arial;
+  font-family: koz, Helvetica, sans-serif;
   width: 400px;
   height: 200px;
   display: grid;
@@ -41,13 +47,13 @@ a {
 }
 
 .tab-logo {
-    display: block;
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    width: 100%;
-    height: auto;
+  display: block;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  width: 100%;
+  height: auto;
 }
 
 .tab-text{
@@ -60,10 +66,10 @@ a {
 }
 
 .tab-en{
-    grid-column-start: 3;
-    grid-column-end: 5;
-    grid-row-start: 1;
-    grid-row-end: 2;
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 
 .tab-jp{
@@ -84,15 +90,7 @@ a {
   color: #FFF;
 }
 
-.work {
-  display: block;
-  background-color: #FFF;
-  min-width: 600px;
-  min-height: 600px;
-  margin: 1px;
-}
-
-.work img{
-  min-width: 300px;
-  min-height: 300px;
+.work a:hover {
+  background-color: rgba(255,255,255,0.3);
+  transition: background-color 0.15s ease-in;
 }

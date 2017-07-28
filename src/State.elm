@@ -2,6 +2,8 @@ module State exposing (init, update)
 
 import Top.State as Top
 import Works.State as Works
+import Works.Project.State as Project
+import Common.Helpers exposing (find, remove)
 import Types exposing (..)
 import Routing exposing (parseLocation)
 import Navigation exposing (Location)
@@ -15,7 +17,7 @@ init location =
       Top.init
       Works.init
       route
-    , Cmd.none)
+    ,Cmd.none)
 
 update : Msg -> Model -> (Model, Cmd msg)
 update msg model =
@@ -37,3 +39,23 @@ update msg model =
           Works.update message model.works
       in
         ({ model | works = worksModel }, worksCmd)
+    ProjectMsg message ->
+      case model.route of
+        Work projectId ->
+          let
+            projectMaybe = find (\x -> x.id == projectId) model.works.projects
+          in
+            case projectMaybe of
+              Just project ->
+                let
+                  (projectModel, projectCmd) =
+                    Project.update message project
+                  newProjects = List.append [projectModel] (remove project <| model.works.projects)
+                  oldWorks = model.works
+                  newWorks = {oldWorks | projects = newProjects}
+                in
+                  ({ model | works = newWorks }, projectCmd)
+              Nothing ->
+                (model, Cmd.none)
+        _ ->
+          (model, Cmd.none)

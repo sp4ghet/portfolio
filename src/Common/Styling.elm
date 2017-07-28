@@ -4,10 +4,17 @@ module Common.Styling exposing (
   ,lastEnStyle
   ,firstJpStyle
   ,lastJpStyle
+  ,tabGrid
   )
 
 import Html.Attributes exposing (style)
 import Html exposing (Attribute)
+
+tabGrid : Attribute msg
+tabGrid = style [
+  ("grid-template-columns", "repeat(4, 100px)"),
+  ("grid-template-rows", "repeat(2, 100px)")
+  ]
 
 firstEnStyle : Attribute msg
 firstEnStyle = style

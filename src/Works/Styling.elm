@@ -49,20 +49,27 @@ tabsContainerStyle = style [
   ("flex-wrap", "no-wrap")
   ]
 
-worksStyle : Attribute msg
-worksStyle = style [
-  ("grid-template-columns", "repeat(4, 100px)"),
-  ("grid-template-rows", "repeat(2, 100px)")
+-- Work project
+
+workStyle : Attribute msg
+workStyle = style [
+  ("background-color", "#FFF")
+  ,("min-width", "600px")
+  ,("min-height", "600px")
+  ,("margin", "1px")
+  ,("background-size", "cover")
+  ,("background-repeat", "no-repeat")
+  ,("background-position", "50% 50%")
   ]
 
-blogStyle : Attribute msg
-blogStyle = style [
-  ("grid-template-columns", "repeat(4, 100px)"),
-  ("grid-template-rows", "repeat(2, 100px)")
-  ]
-
-aboutStyle : Attribute msg
-aboutStyle = style [
-  ("grid-template-columns", "repeat(4, 100px)"),
-  ("grid-template-rows", "repeat(2, 100px)")
-  ]
+workTextWrapperStyle : Attribute msg
+workTextWrapperStyle =
+  style [
+    ("display", "flex")
+    ,("flex-direction", "column")
+    ,("justify-content", "center")
+    ,("align-content", "center")
+    ,("height", "100%")
+    ,("width", "100%")
+    ,("margin", "0")
+    ]

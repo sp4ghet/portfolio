@@ -36,21 +36,3 @@ nameStyle = style [
   ("grid-template-rows", "repeat(2, 100px)"),
   ("background-color", "rgba(255,255,255,0.0)")
   ]
-
-worksStyle : Attribute msg
-worksStyle = style [
-  ("grid-template-columns", "repeat(4, 100px)"),
-  ("grid-template-rows", "repeat(2, 100px)")
-  ]
-
-blogStyle : Attribute msg
-blogStyle = style [
-  ("grid-template-columns", "repeat(4, 100px)"),
-  ("grid-template-rows", "repeat(2, 100px)")
-  ]
-
-aboutStyle : Attribute msg
-aboutStyle = style [
-  ("grid-template-columns", "repeat(4, 100px)"),
-  ("grid-template-rows", "repeat(2, 100px)")
-  ]

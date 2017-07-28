@@ -1,3 +1,4 @@
+-- Entry Point for elm app.
 module App exposing (main)
 
 import Html

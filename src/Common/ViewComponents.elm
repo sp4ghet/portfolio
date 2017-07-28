@@ -7,7 +7,7 @@ import Common.Styling exposing (..)
 
 tab : List (Attribute msg) -> String -> String -> String -> String -> Html msg
 tab attrs imgUrl href_ englishText japaneseText = a
-  (List.append [href href_, class "tab"] attrs)
+  (List.append [href href_, class "tab", tabGrid] attrs)
   [
   img [
     src imgUrl
@@ -15,12 +15,12 @@ tab attrs imgUrl href_ englishText japaneseText = a
     ,class "tab-logo"
     ]
     []
-  ,p [
+  ,h1 [
     class "tab-en"
     ,class "tab-text"
     ]
     [text englishText]
-  ,p [
+  ,h1 [
     class "tab-jp"
     ,class "tab-text"
     ]
@@ -41,7 +41,7 @@ nameItem : List (Attribute msg) -> String -> Html msg
 nameItem attrs  content = div
   (List.append [class "name"] attrs)
   [
-  p
+  h1
     [
     style
       [
@@ -50,5 +50,5 @@ nameItem attrs  content = div
       ("margin", "auto")
       ]
     ]
-    [text content] 
+    [text content]
   ]

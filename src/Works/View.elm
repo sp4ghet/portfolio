@@ -1,12 +1,12 @@
 module Works.View exposing (root)
 
 import Works.Types exposing (..)
+import Works.Project.Types exposing (Project)
 import Works.Styling exposing (..)
 import Common.Styling exposing (..)
 import Common.ViewComponents exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Html.Events exposing (..)
 
 waveform : List (List Float)
 waveform = [[0.748,0.718,0.500],[0.500,0.798,0.368],[0.828,1.038,-0.452],[1.468,-0.132,-0.882]]
@@ -19,8 +19,31 @@ root model = div [
   ]
   [
   navBar
-  ,contents
+  ,contents model.projects
   ]
+
+-- Contents
+contents : List Project -> Html Msg
+contents projects =
+  let
+    work : Project -> Html Msg
+    work project = div
+      [
+      class "work"
+      ,workStyle
+      , style [("background-image", "url("++project.imgUrl++")")]
+      ]
+      [
+      a [href ("#works/"++project.id), workTextWrapperStyle] [
+        p [style [("text-align", "center")]] [text project.title]
+        ]
+      ]
+  in
+  div [
+    id "works-list"
+    ,worksListStyle
+    ]
+    (List.map work projects)
 
 navBar : Html Msg
 navBar = nav
@@ -40,36 +63,6 @@ navBar = nav
     ]
   ]
 
--- Contents
-contents : Html Msg
-contents =
-  div [
-    id "works-list"
-    ,worksListStyle
-    ] [
-    work ""
-    ,work ""
-    ,work ""
-    ,work ""
-    ,work ""
-    ,work ""
-    ,work ""
-    ,work ""
-    ,work ""
-    ]
-
--- Works
-work : String -> Html Msg
-work name = div
-  [
-  class "work"
-  ]
-  [
-  img [
-    src ""
-  ] []
-  ]
-
 -- NAME
 
 name : Html Msg
@@ -79,7 +72,7 @@ name = nameBase [id "name", class "tab"]
 
 works : Html Msg
 works = tab
-  [id "works", class "selected", worksStyle]
+  [id "works", class "selected"]
   "assets/img/works.png"
   "#works"
   "Works"
@@ -89,7 +82,7 @@ works = tab
 
 blog : Html Msg
 blog = tab
-  [id "blog", blogStyle]
+  [id "blog"]
   "assets/img/blog.png"
   "https://goonytoons.com/blog"
   "Blog"
@@ -99,7 +92,7 @@ blog = tab
 
 about : Html Msg
 about = tab
-  [id "about", aboutStyle]
+  [id "about"]
   "assets/img/about.png"
   "#about"
   "About Me"
