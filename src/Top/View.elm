@@ -42,7 +42,7 @@ name = nameBase [id "name", class "tab", nameStyle]
 works : Html Msg
 works = tab
   [id "works"]
-  "assets/img/works.png"
+  "assets/img/icons/works.png"
   "#works"
   "Works"
   "作品"
@@ -52,7 +52,7 @@ works = tab
 blog : Html Msg
 blog = tab
   [id "blog"]
-  "assets/img/blog.png"
+  "assets/img/icons/blog.png"
   "https://goonytoons.com/blog"
   "Blog"
   "ブログ"
@@ -62,7 +62,7 @@ blog = tab
 about : Html Msg
 about = tab
   [id "about"]
-  "assets/img/about.png"
+  "assets/img/icons/about.png"
   "#about"
   "About Me"
   "自己紹介"
