@@ -1,4 +1,4 @@
-module Works.View exposing (root)
+module Works.View exposing (root, navBar)
 
 import Works.Types exposing (..)
 import Works.Project.Types exposing (Project)
@@ -45,7 +45,7 @@ contents projects =
     ]
     (List.map work projects)
 
-navBar : Html Msg
+navBar : Html msg
 navBar = nav
   [
   navBarStyle
@@ -65,12 +65,12 @@ navBar = nav
 
 -- NAME
 
-name : Html Msg
+name : Html msg
 name = nameBase [id "name", class "tab"]
 
 -- WORKS
 
-works : Html Msg
+works : Html msg
 works = tab
   [id "works", class "selected"]
   "assets/img/works.png"
@@ -80,7 +80,7 @@ works = tab
 
 -- Blog
 
-blog : Html Msg
+blog : Html msg
 blog = tab
   [id "blog"]
   "assets/img/blog.png"
@@ -90,7 +90,7 @@ blog = tab
 
 -- About me
 
-about : Html Msg
+about : Html msg
 about = tab
   [id "about"]
   "assets/img/about.png"

@@ -2,9 +2,10 @@
 module Works.Contents.Main exposing (projects)
 
 import Works.Project.Types exposing (Project, Content)
+import Works.Contents.OpenAgBrain as OpenAgBrain
 
 
 projects : List Project
 projects = [
-  Project "OpenAg Brain" "openag_brain" "assets/img/projects/openag_brain/pfc2_render.jpg" []
+  OpenAgBrain.content
   ]

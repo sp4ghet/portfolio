@@ -1,6 +1,9 @@
 module Works.Project.View exposing (root)
 
+import Common.Styling exposing (..)
+import Common.ViewComponents exposing (..)
 import Works.Project.Types exposing (..)
+import Works.View exposing (navBar)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Markdown
@@ -10,9 +13,15 @@ waveform = [[0.748,0.718,0.500],[0.500,0.798,0.368],[0.828,1.038,-0.452],[1.468,
 
 root : Model -> Html Msg
 root model =
-  div [] [
-    p [] [text model.title]
+  div [
+  radialCosineGradient waveform "top left"
   ]
+    <| List.append [
+        navBar
+        , h1 [] [text model.title]
+        ]
+      <| List.map render model.contents
+
 
 render : Content -> Html msg
 render content =
