@@ -1,7 +1,6 @@
 -- Entry Point for elm app.
 module App exposing (main)
 
-import Html
 import Navigation
 import State
 import View

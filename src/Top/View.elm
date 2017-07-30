@@ -6,7 +6,6 @@ import Common.Styling exposing (..)
 import Common.ViewComponents exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Html.Events exposing (..)
 
 waveform : List (List Float)
 waveform = [[0.748,0.718,0.500],[0.500,0.798,0.368],[0.828,1.038,-0.452],[1.468,-0.132,-0.882]]

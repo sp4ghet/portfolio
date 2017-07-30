@@ -1,7 +1,5 @@
 module Works.Project.Types exposing (..)
 
-import Html
-
 type alias Model = Project
 
 type Msg =

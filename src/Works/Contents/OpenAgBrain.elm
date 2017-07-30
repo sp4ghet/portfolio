@@ -3,10 +3,10 @@ module Works.Contents.OpenAgBrain exposing (content)
 import Works.Project.Types exposing (..)
 
 content : Project
-content =  Project "openag_brain" "openag_brain" "assets/img/projects/openag_brain/pfc2_render.jpg" [
+content =  Project "openag_brain" "openag_brain" "./assets/img/projects/openag_brain/pfc2_render.jpg" [
   Picture "./assets/img/projects/openag_brain/pfc2_render.jpg"
   ,Description initialDescription
-  ,Picture "/assets/img/projects/openag_brain/hardware-asm.png"
+  ,Picture "./assets/img/projects/openag_brain/hardware-asm.png"
   ]
 
 initialDescription : String

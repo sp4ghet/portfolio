@@ -2,6 +2,7 @@ module Top.State exposing (init, update)
 
 import Top.Types exposing (..)
 
+init : Model
 init = Model
 
 update : Msg -> Model -> (Model, Cmd msg)

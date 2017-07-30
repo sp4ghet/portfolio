@@ -3,9 +3,9 @@ module Works.Contents.Pong exposing (content)
 import Works.Project.Types exposing (..)
 
 content : Project
-content = Project "Pong.js" "pong" "/assets/img/projects/pong/canvas.png" [
+content = Project "Pong.js" "pong" "./assets/img/projects/pong/canvas.png" [
   Description initialDescription
-  ,Picture "/assets/img/projects/pong/canvas.png"
+  ,Picture "./assets/img/projects/pong/canvas.png"
   ]
 
 initialDescription : String
