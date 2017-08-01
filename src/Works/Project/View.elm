@@ -6,6 +6,7 @@ import Works.Project.Styling exposing (..)
 import Works.View exposing (navBar)
 import Html exposing (..)
 import Html.Attributes exposing (..)
+import Json.Encode as Encode
 import Markdown
 
 waveform : List (List Float)
@@ -45,6 +46,7 @@ render content =
             autoplay True
             ,loop True
             ,controls True
+            ,property "muted" (Encode.bool True)
             ,videoContentStyle
           ] [
             source [
