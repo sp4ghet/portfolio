@@ -14,7 +14,7 @@ projects = [
   OpenAgBrain.content
   ,CG.content
   ,GODEL.content
-  ,Fab.content
   ,Aquaponics.content
+  ,Fab.content
   ,Pong.content
   ]

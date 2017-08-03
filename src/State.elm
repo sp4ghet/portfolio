@@ -3,6 +3,7 @@ module State exposing (init, update)
 import Top.State as Top
 import Works.State as Works
 import Works.Project.State as Project
+import About.State as About
 import Common.Helpers exposing (find, remove)
 import Types exposing (..)
 import Routing exposing (parseLocation)
@@ -16,6 +17,7 @@ init location =
     (Model
       Top.init
       Works.init
+      About.init
       route
     ,Cmd.none)
 
@@ -59,3 +61,9 @@ update msg model =
                 (model, Cmd.none)
         _ ->
           (model, Cmd.none)
+    AboutMsg message ->
+      let
+        (aboutModel, aboutCmd) =
+          About.update message model.about
+      in
+        ({ model | about = aboutModel }, aboutCmd)
