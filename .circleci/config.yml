@@ -36,6 +36,5 @@ jobs:
       - deploy:
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              sudo apt install rsync
               ./deploy.sh
             fi
