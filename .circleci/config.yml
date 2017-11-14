@@ -35,6 +35,6 @@ jobs:
 
       - deploy:
           command: |
-          if [ "${CIRCLE_BRANCH}" == "master" ]; then
-            ./deploy.sh
-          fi
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              ./deploy.sh
+            fi
