@@ -1,8 +1,8 @@
 'use strict';
 
 // index.htmlがdistにコピーされるようにRequireする
-require('./index.html');
-require('../assets/css/main.css')
+require('./index.html')
+require('./mod_bulma.scss')
 
 var Elm = require('../src/App.elm');
 var mountNode = document.getElementById('main');
