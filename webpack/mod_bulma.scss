@@ -1,0 +1,64 @@
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+@import "../node_modules/bulma/sass/utilities/functions";
+
+@font-face {
+    font-family: koz;
+    font-style: normal;
+    font-weight: 400;
+    src: url(../assets/fonts/koz-l.otf);
+}
+
+$cosine-gradient: radial-gradient(circle at left top,
+  rgb(66, 255, 163),
+  rgb(70, 255, 178),
+  rgb(106, 255, 186),
+  rgb(164, 255, 187),
+  rgb(230, 217, 180),
+  rgb(255, 105, 167),
+  rgb(255, 56, 147),
+  rgb(255, 90, 124),
+  rgb(255, 194, 98),
+  rgb(220, 255, 71),
+  rgb(154, 255, 47));
+$family-san-serif: "koz", "Helvetica", "Roboto", "Ubuntu", san-serif;
+
+// $background: $cosine-gradient;
+$link: $white;
+$danger: $red;
+$family-primary: $family-san-serif;
+
+$linkedin: #0077b5;
+$linkedin-invert: findColorInvert($linkedin);
+$twitter: #55acee;
+$twitter-invert: findColorInvert($twitter);
+$github: #333;
+$github-invert: findColorInvert($github);
+
+@import "../node_modules/bulma/sass/utilities/derived-variables.sass";
+$addColors: (
+  "twitter":($twitter, $twitter-invert),
+  "linkedin": ($linkedin, $linkedin-invert),
+  "github": ($github, $github-invert)
+);
+$colors: map-merge($colors, $addColors);
+
+$navbar-height: 128px;
+$navbar-item-img-max-height: 128px;
+$navbar-item-color: $white;
+$navbar-item-backround-color: transparent;
+$navbar-item-hover-background-color: rgba(255,255,255,0.3);
+$navbar-item-hover-color: $black;
+$navbar-dropdown-background-color: transparent;
+
+@import "../node_modules/bulma/bulma";
+
+.navbar-menu {
+  background-color: transparent;
+}
+
+.navbar-burger {
+  background-color: rgba(0,0,0,.05);
+}
+.navbar-burger:hover{
+  background-color: rgba(255,255,255,0.3);
+}

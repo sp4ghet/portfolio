@@ -1,4 +1,4 @@
-module Works.View exposing (root, navBar)
+module Works.View exposing (root)
 
 import Works.Types exposing (..)
 import Works.Project.Types exposing (Project)
@@ -44,56 +44,3 @@ contents projects =
     ,worksListStyle
     ]
     (List.map work projects)
-
-navBar : Html msg
-navBar = nav
-  [
-  navBarStyle
-  ]
-  [
-  div
-    [nameContainerStyle]
-    [name],
-  div
-    [tabsContainerStyle]
-    [
-    works
-    ,blog
-    ,about
-    ]
-  ]
-
--- NAME
-
-name : Html msg
-name = nameBase [id "name", class "tab"]
-
--- WORKS
-
-works : Html msg
-works = tab
-  [id "works", class "selected"]
-  "assets/img/icons/works.png"
-  "#works"
-  "Works"
-  "作品"
-
--- Blog
-
-blog : Html msg
-blog = tab
-  [id "blog"]
-  "assets/img/icons/blog.png"
-  "https://goonytoons.com/blog"
-  "Blog"
-  "ブログ"
-
--- About me
-
-about : Html msg
-about = tab
-  [id "about"]
-  "assets/img/icons/about.png"
-  "#about"
-  "About Me"
-  "自己紹介"

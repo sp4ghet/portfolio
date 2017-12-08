@@ -1,17 +1,12 @@
 module Works.Project.View exposing (root)
 
 import Common.Styling exposing (..)
+import Common.ViewComponents exposing (..)
 import Works.Project.Types exposing (..)
-import Works.Project.Styling exposing (..)
-import Works.View exposing (navBar)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Json.Encode as Encode
 import Markdown
-
-waveform : List (List Float)
-waveform = [[0.748,0.718,0.500],[0.500,0.798,0.368],[0.828,1.038,-0.452],[1.468,-0.132,-0.882]]
-
 
 root : Model -> Html Msg
 root model =
@@ -20,13 +15,13 @@ root model =
   ]
   [
     navBar
-    ,div [contentsContainerStyle]
+    ,section [class "section"]
       <| List.append [
-       div [contentWrapperStyle] [h1 [] [text model.title]]
+       div [class "content", class "container"] [h1 [] [text model.title]]
        ]
        <| List.map render model.contents
+    ,copyrightFooter
   ]
-
 
 render : Content -> Html msg
 render content =
@@ -34,11 +29,10 @@ render content =
     rendered =
       case content of
         Description markdown ->
-          Markdown.toHtml [class "project-description"] markdown
+          Markdown.toHtml [] markdown
         Picture imgUrl ->
           img [
           class "project-picture"
-          ,imageContentStyle
           ,src imgUrl
           ] []
         Video url ->
@@ -47,7 +41,6 @@ render content =
             ,loop True
             ,controls True
             ,property "muted" (Encode.bool True)
-            ,videoContentStyle
           ] [
             source [
               src url
@@ -57,7 +50,8 @@ render content =
           ]
   in
     div [
-      contentWrapperStyle
+    class "content",
+    class "container"
     ] [
       rendered
     ]

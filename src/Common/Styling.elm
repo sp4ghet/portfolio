@@ -5,10 +5,14 @@ module Common.Styling exposing (
   ,firstJpStyle
   ,lastJpStyle
   ,tabGrid
+  ,waveform
   )
 
 import Html.Attributes exposing (style)
 import Html exposing (Attribute)
+
+waveform : List (List Float)
+waveform = [[0.748,0.718,0.500],[0.500,0.798,0.368],[0.828,1.038,-0.452],[1.468,-0.132,-0.882]]
 
 tabGrid : Attribute msg
 tabGrid = style [
@@ -77,7 +81,6 @@ cosineGradient x =
             "rgb(" ++ toString (r 1.0) ++ "," ++ toString (g 1.0) ++ "," ++ toString (b 1.0) ++ ")"
           else
             ""
-
       in
         segment 0 10
     _ ->
