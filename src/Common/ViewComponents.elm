@@ -173,6 +173,15 @@ copyrightFooter =
                 [ class "has-text-centered"
                 , class "content"
                 ]
-                [ p [] [ text "Copyright Rikuo Hasegawa 2017" ] ]
+                [ p []
+                    [ text "© Copyright 2017 Rikuo Hasegawa. This work is released under a "
+                    , a
+                        [ href "http://creativecommons.org/licenses/by-nc-sa/4.0/"
+                        , style [ ( "color", "#00F" ) ]
+                        ]
+                        [ text "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License"
+                        ]
+                    ]
+                ]
             ]
         ]
