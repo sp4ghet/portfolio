@@ -1,9 +1,31 @@
 module About.State exposing (init, update)
 
 import About.Types exposing (..)
+import Common.State as Navbar
+
 
 init : Model
-init = Model """
+init =
+    Model description Navbar.initNav
+
+
+update : Msg -> Model -> ( Model, Cmd msg )
+update message model =
+    case message of
+        Nav navmsg ->
+            let
+                ( navModel, navCmd ) =
+                    Navbar.updateNav navmsg model.navModel
+            in
+                ( { model | navModel = navModel }, navCmd )
+
+        None ->
+            ( model, Cmd.none )
+
+
+description : String
+description =
+    """
 # Rikuo Hasegawa // 長谷川陸央 // ﾊｾｶﾞﾜ ﾘｸｵ
 
 ----
@@ -59,7 +81,3 @@ Often being told I think like a craftsman; my lifelong dream is to create someth
 - 10/2014 [interview] _CODE1000メンター田中洋喜×谷脇大輔が語る「プログラミングが上達するコツ」_ // CodeIQ
   - https://codeiq.jp/magazine/2014/10/17138/
 """
-
-update : Msg -> Model -> (Model, Cmd msg)
-update message model =
-  (model, Cmd.none)

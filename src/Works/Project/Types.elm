@@ -1,18 +1,28 @@
 module Works.Project.Types exposing (..)
 
-type alias Model = Project
+import Common.Types exposing (NavModel, NavMsg)
 
-type Msg =
-  None
 
-type alias Project = {
-  title: String
-  ,id: String
-  ,imgUrl: String
-  ,contents: List Content
-}
+type alias Model =
+    { project : Project
+    , navModel : NavModel
+    }
 
-type Content =
-  Description String
-  |Picture String
-  |Video String
+
+type Msg
+    = Nav NavMsg
+    | None
+
+
+type alias Project =
+    { title : String
+    , id : String
+    , imgUrl : String
+    , contents : List Content
+    }
+
+
+type Content
+    = Description String
+    | Picture String
+    | Video String

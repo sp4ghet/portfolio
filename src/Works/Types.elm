@@ -1,9 +1,15 @@
 module Works.Types exposing (..)
 
-import Works.Project.Types exposing (Project)
+import Works.Project.Types as Project exposing (Model)
+import Common.Types exposing (NavModel, NavMsg)
 
-type alias Model = {
-  projects: List Project
-  }
 
-type Msg = None
+type alias Model =
+    { projects : List Project.Model
+    , navModel : NavModel
+    }
+
+
+type Msg
+    = Nav NavMsg
+    | None

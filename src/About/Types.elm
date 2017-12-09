@@ -1,7 +1,14 @@
 module About.Types exposing (..)
 
-type Msg = None
+import Common.Types exposing (NavModel, NavMsg)
 
-type alias Model = {
-  description : String
-  }
+
+type Msg
+    = Nav NavMsg
+    | None
+
+
+type alias Model =
+    { description : String
+    , navModel : NavModel
+    }

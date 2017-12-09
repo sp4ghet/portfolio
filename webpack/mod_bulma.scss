@@ -20,6 +20,9 @@ $cosine-gradient: radial-gradient(circle at left top,
   rgb(255, 194, 98),
   rgb(220, 255, 71),
   rgb(154, 255, 47));
+
+$hover-color: rgba(255,255,255,0.3);
+
 $family-san-serif: "koz", "Helvetica", "Roboto", "Ubuntu", san-serif;
 
 // $background: $cosine-gradient;
@@ -46,7 +49,7 @@ $navbar-height: 128px;
 $navbar-item-img-max-height: 128px;
 $navbar-item-color: $white;
 $navbar-item-backround-color: transparent;
-$navbar-item-hover-background-color: rgba(255,255,255,0.3);
+$navbar-item-hover-background-color: $hover-color;
 $navbar-item-hover-color: $black;
 $navbar-dropdown-background-color: transparent;
 
@@ -60,5 +63,16 @@ $navbar-dropdown-background-color: transparent;
   background-color: rgba(0,0,0,.05);
 }
 .navbar-burger:hover{
-  background-color: rgba(255,255,255,0.3);
+  background-color: $hover-color;
+}
+
+.tint {
+  background-color: $hover-color;
+}
+
+.work:hover figure{
+  background-color: $white;
+}
+.work:hover img{
+  opacity: 0.3;
 }

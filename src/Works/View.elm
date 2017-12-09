@@ -1,46 +1,58 @@
 module Works.View exposing (root)
 
 import Works.Types exposing (..)
+import Works.Styling exposing (textCenteringStyle)
 import Works.Project.Types exposing (Project)
-import Works.Styling exposing (..)
 import Common.Styling exposing (..)
 import Common.ViewComponents exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 
-waveform : List (List Float)
-waveform = [[0.748,0.718,0.500],[0.500,0.798,0.368],[0.828,1.038,-0.452],[1.468,-0.132,-0.882]]
 
 root : Model -> Html Msg
-root model = div [
-  id "works-container"
-  ,worksContainerStyle
-  ,radialCosineGradient waveform "top left"
-  ]
-  [
-  navBar
-  ,contents model.projects
-  ]
+root model =
+    div
+        [ radialCosineGradient waveform "top left"
+        ]
+        [ Html.map Nav (navBar model.navModel)
+        , contents (model.projects |> List.map (\m -> m.project))
+        , copyrightFooter
+        ]
+
+
 
 -- Contents
+
+
 contents : List Project -> Html Msg
 contents projects =
-  let
-    work : Project -> Html Msg
-    work project = div
-      [
-      class "work"
-      ,workStyle
-      , style [("background-image", "url("++project.imgUrl++")")]
-      ]
-      [
-      a [href ("#works/"++project.id), workTextWrapperStyle] [
-        p [style [("text-align", "center")]] [text project.title]
-        ]
-      ]
-  in
-  div [
-    id "works-list"
-    ,worksListStyle
-    ]
-    (List.map work projects)
+    let
+        work : Project -> Html Msg
+        work project =
+            div
+                [ class "column"
+                , class "is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd"
+                , class "has-text-centered"
+                , class "work"
+                ]
+                [ a
+                    [ href ("#works/" ++ project.id) ]
+                    [ figure
+                        [ class "image is-square is-marginless"
+                        , style [ ( "position", "relative" ) ]
+                        ]
+                        [ img [ src project.imgUrl ] []
+                        , p
+                            [ textCenteringStyle ]
+                            [ text project.title ]
+                        ]
+                    ]
+                ]
+    in
+        section
+            [ class "section"
+            , class "tint"
+            ]
+            [ div [ class "columns is-multiline is-vcentered is-centered is-mobile is-6" ]
+                (List.map work projects)
+            ]

@@ -2,7 +2,9 @@ module Common.ViewComponents exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
+import Html.Events exposing (onClick)
 import Common.Styling exposing (..)
+import Common.Types exposing (..)
 
 
 tab : List (Attribute msg) -> String -> String -> String -> String -> Html msg
@@ -11,8 +13,6 @@ tab attrs imgUrl href_ englishText japaneseText =
         (List.append
             [ href href_
             , class "columns is-vcentered is-mobile is-marginless is-paddingless"
-
-            -- ,style [("height", "168px"), ("width", "262px")]
             ]
             attrs
         )
@@ -32,8 +32,8 @@ tab attrs imgUrl href_ englishText japaneseText =
         ]
 
 
-navBar : Html msg
-navBar =
+navBar : NavModel -> Html NavMsg
+navBar model =
     nav
         [ class "navbar"
         , radialCosineGradient waveform "bottom left"
@@ -41,14 +41,23 @@ navBar =
         [ div
             [ class "navbar-brand" ]
             [ div [ class "navbar-item" ] [ nameLogo ]
-            , button [ class "button navbar-burger" ]
+            , button
+                [ class "button navbar-burger"
+                , onClick ToggleMenuActive
+                ]
                 [ span [] []
                 , span [] []
                 , span [] []
                 ]
             ]
         , div
-            [ class "navbar-menu is-active"
+            [ class "navbar-menu"
+            , class
+                (if model.menuActive then
+                    "is-active"
+                 else
+                    ""
+                )
             ]
             [ div [ class "navbar-start" ] []
             , div [ class "navbar-end" ]
