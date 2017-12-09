@@ -40,7 +40,11 @@ navBar model =
         ]
         [ div
             [ class "navbar-brand" ]
-            [ div [ class "navbar-item" ] [ nameLogo ]
+            [ div
+                [ class "navbar-item"
+                , id "navbar-logo"
+                ]
+                [ nameLogo ]
             , button
                 [ class "button navbar-burger"
                 , onClick ToggleMenuActive
@@ -80,42 +84,16 @@ nameLogo =
         ]
         [ figure
             [ class "image"
-            , width 400
-            , height 128
             ]
-            [ img [ src "assets/img/icons/title_white.svg" ] []
+            [ img
+                [ src "assets/img/icons/title_white.svg"
+                ]
+                []
             ]
         ]
 
 
 
--- nameLogo =
---     a
---         [ href "#"
---         , class "columns is-multiline is-gapless is-mobile"
---         , class "is-marginless is-paddingless"
---         ]
---         [ h1
---             [ class "column is-5 is-offset-1"
---             , class "is-size-2-widescreen is-size-4-desktop"
---             ]
---             [ text "Rikuo" ]
---         , h1
---             [ class "column is-6"
---             , class "is-size-2-widescreen is-size-4-desktop"
---             ]
---             [ text "Hasegawa" ]
---         , h1
---             [ class "column is-6 is-offset-1"
---             , class "is-size-2-widescreen is-size-4-desktop"
---             ]
---             [ text "長谷川" ]
---         , h1
---             [ class "column is-5"
---             , class "is-size-2-widescreen is-size-4-desktop"
---             ]
---             [ text "陸央" ]
---         ]
 -- WORKS
 
 
@@ -174,7 +152,13 @@ copyrightFooter =
                 , class "content"
                 ]
                 [ p []
-                    [ text "© Copyright 2017 Rikuo Hasegawa. This work is released under a "
+                    [ text "© Copyright 2017 Rikuo Hasegawa. "
+                    , a
+                        [ href "https://github.com/sp4ghet/portfolio"
+                        , style [ ( "color", "#00F" ) ]
+                        ]
+                        [ text "This work" ]
+                    , text " is released under a "
                     , a
                         [ href "http://creativecommons.org/licenses/by-nc-sa/4.0/"
                         , style [ ( "color", "#00F" ) ]

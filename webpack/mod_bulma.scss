@@ -76,3 +76,9 @@ $navbar-dropdown-background-color: transparent;
 .work:hover img{
   opacity: 0.3;
 }
+
+#navbar-logo {
+  @include touch{
+    max-width: 60%;
+  }
+}
