@@ -58,6 +58,20 @@ render content =
                             []
                         , text "No video support"
                         ]
+
+                Youtube videoId ->
+                    div
+                        [ class "video-container"
+                        ]
+                        [ iframe
+                            [ attribute "allow" "encrypted-media"
+                            , attribute "allowfullscreen" ""
+                            , attribute "frameborder" "0"
+                            , attribute "gesture" "media"
+                            , src ("https://www.youtube-nocookie.com/embed/" ++ videoId ++ "?rel=0&showinfo=0")
+                            ]
+                            []
+                        ]
     in
         div
             [ class "content"

@@ -26,3 +26,4 @@ type Content
     = Description String
     | Picture String
     | Video String
+    | Youtube String

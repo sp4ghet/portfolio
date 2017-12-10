@@ -11,10 +11,10 @@ content =
         [ Description "I occasionally write shader code for raymarching in my free time. The code is on Github at [https://github.com/Spaghet/raymarch](https://github.com/Spaghet/raymarch)"
         , Picture "./assets/img/projects/Unity/fathers-day.png"
         , Description "This is a 3 dimensional Sierpinski triangle fractal rendered in Unity via raymarching"
-        , Video "./assets/img/projects/Unity/raymarch.mp4"
+        , Youtube "aWW8BYCwJ_k"
         , Description "This is also another object rendered using raymarching which is animated."
         , Description "I also tried making some audio reactive real time stuff using the OP-1 synth from Teenage Engineering; I wouldn't call it VJ-ing yet."
-        , Video "./assets/img/projects/Unity/midi2.mp4"
+        , Youtube "2UprjV380JE"
         , Description "I've also worked on some GPGPU stuff using Compute Shaders to simulate a school of sardines."
-        , Video "./assets/img/projects/Unity/sardines.mp4"
+        , Youtube "J08V7aJMBaI"
         ]
