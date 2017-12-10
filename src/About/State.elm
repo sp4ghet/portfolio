@@ -26,23 +26,20 @@ update message model =
 description : String
 description =
     """
-# Rikuo Hasegawa // 長谷川陸央 // ﾊｾｶﾞﾜ ﾘｸｵ
-
 ----
 
-Hi. I'm still trying to find my place in the world, but I'm currently an engineer.
-
-Often being told I think like a craftsman; my lifelong dream is to create something great that I can feel happy with, and die happily.
+Philomath Craftsman; Ideally a polymath but not quite there yet.
+I like to do things with computers.
 
 ----
 
 ## Interests and Skills
 
-- AR // 3DCG // Generative Systems // Complex Emergent Systems // Functional Programming // Reactive Programming // Aquaponics // Control Environment Agriculture
+- Graphics // xR // Complex Systems // Functional Programming // Aquaponics // Controlled Environment Agriculture // Web (Front|Back)end
 
 ----
 
-## Education and Residencies
+## Education
 
 - [04/2013 ~ 03/2016] Tokyo Metropolitan Kokusai High School
 
@@ -50,7 +47,8 @@ Often being told I think like a craftsman; my lifelong dream is to create someth
 
 ## Career Summary
 
-- [10/2016 ~ current] MIT Media Lab // Open Agriculture Initiative // Projects Assistant
+- [08/2017 ~ 08/2017] Mercari Inc. // Machine Learning Team // Summer Internship
+- [10/2016 ~ 10/2017] MIT Media Lab // Open Agriculture Initiative // Projects Assistant
 - [04/2016 ~ current] Mogura Inc. // Mogura VR // Writer & VR Developer
 - [08/2015 ~ 04/2016] Colopl Inc. // VR Development Team // VR Developer
 - [02/2015 ~ 06/2015] Team IcARus // Software Developer (Mainly VR)

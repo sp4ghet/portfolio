@@ -30,6 +30,12 @@ contents model =
             [ id "about-me-contents"
             , class "container content"
             ]
-            [ Markdown.toHtml [] model.description
+            [ h1 [ class "is-title" ] [ text "Rikuo Hasegawa // 長谷川陸央 // ﾊｾｶﾞﾜ ﾘｸｵ" ]
+            , div []
+                [ a [ href "https://twitter.com/sp4ghet", class "icon has-text-dark" ] [ i [ class "ion-social-twitter-outline" ] [] ]
+                , a [ href "https://facebook.com/rikuo.hasegawa", class "icon has-text-dark" ] [ i [ class "ion-social-facebook-outline" ] [] ]
+                , a [ href "https://github.com/sp4ghet", class "icon has-text-dark" ] [ i [ class "ion-social-github-outline" ] [] ]
+                ]
+            , Markdown.toHtml [] model.description
             ]
         ]
