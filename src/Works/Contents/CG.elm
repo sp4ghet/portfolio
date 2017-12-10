@@ -5,17 +5,13 @@ import Works.Project.Types exposing (..)
 
 content : Project
 content =
-    Project "3D CG"
-        "3dcg"
-        "assets/img/projects/XR-3DCG/square.png"
-        [ Description "I occasionally write shader code for raymarching in my free time. The code is on Github at [https://github.com/Spaghet/raymarch](https://github.com/Spaghet/raymarch)"
-        , Picture "./assets/img/projects/XR-3DCG/fathers-day.png"
-        , Description "This is a 3 dimensional Sierpinski triangle fractal rendered in Unity via raymarching"
-        , Video "./assets/img/projects/XR-3DCG/raymarch.mp4"
-        , Description "This is also another object rendered using raymarching which is animated."
-        , Description "I also tried making some audio reactive real time stuff using the OP-1 synth from Teenage Engineering; I wouldn't call it VJ-ing yet."
-        , Video "./assets/img/projects/XR-3DCG/midi2.mp4"
-        , Description "AR, especially Google's Project Tango devices and the Hololens are very appealing to me as well."
-        , Picture "./assets/img/projects/XR-3DCG/room-cloud.jpg"
-        , Picture "./assets/img/projects/XR-3DCG/dynamic-meshing.jpg"
+    Project "Computer Graphics"
+        "cg"
+        "assets/img/projects/CG/square.jpg"
+        [ Description "I've worked on some VR projects in the past (which I unfortunately can't share). AR, especially Google's Project Tango devices and the Hololens are very appealing to me as well."
+        , Picture "./assets/img/projects/CG/room-cloud.jpg"
+        , Picture "./assets/img/projects/CG/dynamic-meshing.jpg"
+        , Description "I've also worked on implementing the shaders on the [Pixel Spirit](https://patriciogonzalezvivo.github.io/PixelSpiritDeck/) tarot cards"
+        , Video "./assets/img/projects/CG/pixel_spirit.mp4"
+        , Description "These were implemented using the atom [VEDA](https://github.com/fand/veda) plugin which I've contributed to a little."
         ]
