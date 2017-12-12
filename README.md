@@ -1,4 +1,4 @@
-# portfolio
+# portfolio [![CircleCI](https://circleci.com/gh/sp4ghet/portfolio.svg?style=svg)](https://circleci.com/gh/sp4ghet/portfolio)
 
 ## Get Started
 
