@@ -35,6 +35,7 @@ contents model =
                 [ a [ href "https://twitter.com/sp4ghet", class "icon has-text-dark" ] [ i [ class "ion-social-twitter-outline" ] [] ]
                 , a [ href "https://facebook.com/rikuo.hasegawa", class "icon has-text-dark" ] [ i [ class "ion-social-facebook-outline" ] [] ]
                 , a [ href "https://github.com/sp4ghet", class "icon has-text-dark" ] [ i [ class "ion-social-github-outline" ] [] ]
+                , a [ href "https://bookmeter.com/users/811608", class "icon has-text-dark" ] [ i [ class "ion-ios-bookmarks-outline" ] [] ]
                 ]
             , Markdown.toHtml [] model.description
             ]
