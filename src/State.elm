@@ -1,4 +1,4 @@
-module State exposing (init, update)
+module State exposing (init, update, subscriptions)
 
 import Top.State as Top
 import Works.State as Works
@@ -85,3 +85,8 @@ update msg model =
                     About.update message model.about
             in
                 ( { model | about = aboutModel }, aboutCmd )
+
+
+subscriptions : Model -> Sub Msg
+subscriptions model =
+    Sub.batch [ Sub.map TopMsg (Top.subscriptions model.top) ]

@@ -1,5 +1,16 @@
 module Top.Types exposing (..)
 
-type alias Model = {}
+-- import GLSL.Types as GLSL
 
-type Msg = None
+
+type alias Model =
+    { -- glsl : GLSL.Model
+    }
+
+
+type Msg
+    = None
+
+
+
+-- | GLSLMsg GLSL.Msg

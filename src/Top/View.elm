@@ -7,13 +7,17 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 
 
+-- import GLSL.View as GLSL
+
+
 root : Model -> Html Msg
 root model =
     section
         [ class "hero is-fullheight"
         , radialCosineGradient waveform "top left"
         ]
-        [ div [ class "hero-body", class "columns is-centered is-mobile" ]
+        [ -- Html.map GLSLMsg (GLSL.root model.glsl),
+          div [ class "hero-body", class "columns is-centered is-mobile" ]
             [ div [ class "column is-narrow" ]
                 [ div
                     [ class "columns is-centered is-mobile"

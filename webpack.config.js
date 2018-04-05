@@ -38,6 +38,15 @@ module.exports = {
           warn: true
         }
       },
+      // {
+      //   test:    /\.frag$/,
+      //   exclude: /node_modules/,
+      //   loader:  'file-loader',
+      //   query:{
+      //     name: '[name].[ext]',
+      //     outputPath: 'assets/shaders/'
+      //   }
+      // },
       {
         test: /\.(jpe?g|png|gif)$/i,   //to support eg. background-image property
         loader:"file-loader",
