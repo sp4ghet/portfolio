@@ -26,5 +26,8 @@
     "webpack": "^3.10.0",
     "webpack-dev-middleware": "",
     "webpack-dev-server": ""
+  },
+  "dependencies": {
+    "vedajs": "^0.8.1"
   }
 }
