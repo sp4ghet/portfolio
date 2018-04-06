@@ -1,19 +1,22 @@
 import Veda from 'vedajs'
 
-const veda = new Veda()
 
-const canvas = document.querySelector('canvas.background')
+if (typeof window.orientation === 'undefined') {
+  const veda = new Veda()
 
-const client = new XMLHttpRequest();
+  const canvas = document.querySelector('canvas.background')
 
-client.open('GET', '/assets/shaders/curl.frag')
-client.onload = function() {
-  const code = client.responseText
+  const client = new XMLHttpRequest();
 
-  veda.loadFragmentShader(code)
-  veda.play()
+  client.open('GET', '/assets/shaders/curl.frag')
+  client.onload = function() {
+    const code = client.responseText
+
+    veda.loadFragmentShader(code)
+    veda.play()
+  }
+
+  client.send()
+
+  veda.setCanvas(canvas)
 }
-
-client.send()
-
-veda.setCanvas(canvas)

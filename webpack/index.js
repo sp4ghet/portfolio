@@ -3,7 +3,6 @@
 // index.htmlがdistにコピーされるようにRequireする
 require('./index.html')
 require('./mod_bulma.scss')
-// require('../assets/shaders/curl.frag')
 require('./veda.js')
 
 var Elm = require('../src/App.elm')
