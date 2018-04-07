@@ -14,18 +14,18 @@
   "author": "Rikuo Hasegawa",
   "license": "MIT",
   "devDependencies": {
-    "bulma": "^0.6.1",
-    "css-loader": "^0.28.4",
-    "elm-webpack-loader": "^4.3.1",
-    "extract-text-webpack-plugin": "^3.0.2",
-    "file-loader": "^0.11.2",
-    "node-sass": "^4.7.2",
-    "sass-loader": "^6.0.6",
-    "style-loader": "^0.18.2",
-    "url-loader": "^0.5.9",
-    "webpack": "^3.10.0",
-    "webpack-dev-middleware": "",
-    "webpack-dev-server": ""
+    "bulma": "0.6.1",
+    "css-loader": "0.28.4",
+    "elm-webpack-loader": "4.3.1",
+    "extract-text-webpack-plugin": "3.0.2",
+    "file-loader": "0.11.2",
+    "node-sass": "4.7.2",
+    "sass-loader": "6.0.6",
+    "style-loader": "0.18.2",
+    "url-loader": "0.5.9",
+    "webpack": "3.10.0",
+    "webpack-dev-middleware": "1.12.0",
+    "webpack-dev-server": "1.16.5"
   },
   "dependencies": {
     "vedajs": "^0.8.2"
