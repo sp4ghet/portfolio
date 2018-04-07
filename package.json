@@ -28,6 +28,6 @@
     "webpack-dev-server": ""
   },
   "dependencies": {
-    "vedajs": "^0.8.1"
+    "vedajs": "^0.8.2"
   }
 }
