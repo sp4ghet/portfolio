@@ -14,7 +14,8 @@ root : Model -> Html Msg
 root model =
     section
         [ class "hero is-fullheight"
-        , radialCosineGradient waveform "top left"
+
+        -- , radialCosineGradient waveform "top left"
         ]
         [ -- Html.map GLSLMsg (GLSL.root model.glsl),
           div [ class "hero-body", class "columns is-centered is-mobile" ]

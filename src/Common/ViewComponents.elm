@@ -13,6 +13,7 @@ tab attrs imgUrl href_ englishText japaneseText =
         (List.append
             [ href href_
             , class "columns is-vcentered is-mobile is-marginless is-paddingless"
+            , class "tab"
             ]
             attrs
         )
@@ -36,7 +37,7 @@ navBar : NavModel -> Html NavMsg
 navBar model =
     nav
         [ class "navbar"
-        , radialCosineGradient waveform "bottom left"
+        , style [ ( "background", "transparent" ) ]
         ]
         [ div
             [ class "navbar-brand" ]
@@ -144,11 +145,14 @@ about =
 copyrightFooter : Html msg
 copyrightFooter =
     footer
-        [ class "footer" ]
+        [ class "footer"
+        , style [ ( "position", "relative" ) ]
+        ]
         [ div
             [ class "container" ]
             [ div
                 [ class "has-text-centered"
+                , class "has-text-dark"
                 , class "content"
                 ]
                 [ p []

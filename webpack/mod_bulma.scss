@@ -21,12 +21,16 @@ $cosine-gradient: radial-gradient(circle at left top,
   rgb(220, 255, 71),
   rgb(154, 255, 47));
 
-$hover-color: rgba(255,255,255,0.3);
+$hover-color: rgba(0,0,0, 0.5);
 
 $family-san-serif: "koz", "Helvetica", "Roboto", "Ubuntu", san-serif;
 
+$text: #eee;
+$text-strong: #eaeaea;
+$text-light: #efefef;
+
 // $background: $cosine-gradient;
-$link: $white;
+$link: rgb(106, 255, 186);
 $danger: $red;
 $family-primary: $family-san-serif;
 
@@ -47,11 +51,14 @@ $colors: map-merge($colors, $addColors);
 
 $navbar-height: 128px;
 $navbar-item-img-max-height: 128px;
-$navbar-item-color: $white;
+$navbar-item-color: $black;
 $navbar-item-backround-color: transparent;
 $navbar-item-hover-background-color: $hover-color;
-$navbar-item-hover-color: $black;
+$navbar-item-hover-color: $text;
 $navbar-dropdown-background-color: transparent;
+
+$footer-background-color: $white;
+
 
 @import "../node_modules/bulma/bulma";
 
@@ -66,15 +73,36 @@ $navbar-dropdown-background-color: transparent;
   background-color: $hover-color;
 }
 
-.tint {
-  background-color: $hover-color;
+.work figure div{
+  opacity:0;
+  height: 15%;
+  width: 100%;
+  background-color: #222;
+  color: #DDD;
+}
+
+.work:hover figure div{
+  opacity: 1;
 }
 
 .work:hover figure{
   background-color: $white;
+  color: $white;
 }
+.work img{
+  opacity: 0.75;
+}
+
 .work:hover img{
-  opacity: 0.3;
+  opacity: 1;
+}
+
+.tab {
+  opacity: 0.75;
+}
+
+.tab:hover {
+  opacity: 1;
 }
 
 #navbar-logo {
@@ -105,4 +133,9 @@ canvas.background {
   position: fixed;
   left: 0;
   top: 0;
+}
+
+.article-container {
+  background-color: $hover-color;
+  position: relative;
 }

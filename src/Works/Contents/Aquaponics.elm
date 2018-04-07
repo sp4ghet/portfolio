@@ -21,8 +21,8 @@ content =
 initialDescription : String
 initialDescription =
     """
->Aquaponics (/ˈækwəˈpɒnᵻks/) refers to any system that combines conventional aquaculture (raising aquatic animals such as snails, fish, crayfish or prawns in tanks) with hydroponics (cultivating plants in water) in a symbiotic environment.
---- Wikipedia
+> <p class="has-text-dark">Aquaponics (/ˈækwəˈpɒnᵻks/) refers to any system that combines conventional aquaculture (raising aquatic animals such as snails, fish, crayfish or prawns in tanks) with hydroponics (cultivating plants in water) in a symbiotic environment.
+--- Wikipedia</p>
 
 The first Aquaponics system I built was in middle school in Kakegawa, Japan. It was very basic and didn't involve any complicated control systems.
 """

@@ -17,14 +17,29 @@ root model =
         [ Html.map Nav (navBar model.navModel)
         , section
             [ class "section"
-            , class "tint"
+            , style [ ( "padding", "0 10rem" ) ]
             ]
-          <|
-            List.append
-                [ div [ class "content", class "container" ] [ h1 [] [ text model.project.title ] ]
+            [ div
+                [ class "article-container"
                 ]
-            <|
-                List.map render model.project.contents
+              <|
+                List.append
+                    [ div
+                        [ class "content"
+                        , class "container"
+                        , style
+                            [ ( "width", "80%" )
+                            , ( "padding-top", "3rem" )
+                            ]
+                        ]
+                        [ h1
+                            [ style [ ( "color", "white" ) ] ]
+                            [ text model.project.title ]
+                        ]
+                    ]
+                <|
+                    List.map render model.project.contents
+            ]
         , copyrightFooter
         ]
 
@@ -76,6 +91,9 @@ render content =
         div
             [ class "content"
             , class "container"
+            , style
+                [ ( "width", "80%" )
+                ]
             ]
             [ rendered
             ]

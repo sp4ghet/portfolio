@@ -12,3 +12,12 @@ textCenteringStyle =
         , ( "left", "50%" )
         , ( "transform", "translate(-50%, -50%)" )
         ]
+
+textBottomStyle : Attribute msg
+textBottomStyle =
+  style
+      [ ( "position", "absolute" )
+      , ( "top", "100%" )
+      , ( "left", "50%" )
+      , ( "transform", "translate(-50%, -100%)" )
+      ]

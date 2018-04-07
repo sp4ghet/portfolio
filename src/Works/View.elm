@@ -1,7 +1,7 @@
 module Works.View exposing (root)
 
 import Works.Types exposing (..)
-import Works.Styling exposing (textCenteringStyle)
+import Works.Styling exposing (textBottomStyle, textCenteringStyle)
 import Works.Project.Types exposing (Project)
 import Common.Styling exposing (..)
 import Common.ViewComponents exposing (..)
@@ -12,7 +12,7 @@ import Html.Attributes exposing (..)
 root : Model -> Html Msg
 root model =
     div
-        [ radialCosineGradient waveform "top left"
+        [-- radialCosineGradient waveform "top left"
         ]
         [ Html.map Nav (navBar model.navModel)
         , contents (model.projects |> List.map (\m -> m.project))
@@ -42,16 +42,25 @@ contents projects =
                         , style [ ( "position", "relative" ) ]
                         ]
                         [ img [ src project.imgUrl ] []
-                        , p
-                            [ textCenteringStyle ]
-                            [ text project.title ]
+                        , div
+                            [ style [ ( "height", "10%" ) ]
+                            , textBottomStyle
+                            ]
+                            [ p
+                                [ textCenteringStyle
+                                , class "is-size-6"
+                                , class "column"
+                                , class "is-vcentered"
+                                ]
+                                [ text project.title ]
+                            ]
                         ]
                     ]
                 ]
     in
         section
             [ class "section"
-            , class "tint"
+            , style [ ( "position", "relative" ) ]
             ]
             [ div [ class "columns is-multiline is-vcentered is-centered is-mobile is-6" ]
                 (List.map work projects)
