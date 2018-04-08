@@ -66,9 +66,9 @@ navBar model =
             ]
             [ div [ class "navbar-start" ] []
             , div [ class "navbar-end" ]
-                [ works
-                , blog
-                , about
+                [ div [ onClick ToggleMenuActive ] [ works ]
+                , div [ onClick ToggleMenuActive ] [ blog ]
+                , div [ onClick ToggleMenuActive ] [ about ]
                 ]
             ]
         ]
@@ -87,7 +87,7 @@ nameLogo =
             [ class "image"
             ]
             [ img
-                [ src "assets/img/icons/title_white.svg"
+                [ src "assets/img/icons/title_black.svg"
                 ]
                 []
             ]
