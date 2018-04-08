@@ -62,6 +62,7 @@ update msg model =
                                     ( projectModel, projectCmd ) =
                                         Project.update message project
 
+                                    -- TODO: This makes the ordering of work in the "Works" page different when you return after viewing a project page
                                     newProjects =
                                         List.append [ projectModel ] (remove project <| model.works.projects)
 

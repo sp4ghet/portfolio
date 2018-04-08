@@ -10,5 +10,9 @@ type Msg
 
 type alias Model =
     { description : String
+    , twitterUrl : String
+    , facebookUrl : String
+    , githubUrl : String
+    , bookmeterUrl : String
     , navModel : NavModel
     }

@@ -6,7 +6,13 @@ import Common.State as Navbar
 
 init : Model
 init =
-    Model description Navbar.initNav
+    Model
+        description
+        "https://twitter.com/sp4ghet"
+        "https://facebook.com/rikuo.hasegawa"
+        "https://github.com/sp4ghet"
+        "https://bookmeter.com/users/811608"
+        Navbar.initNav
 
 
 update : Msg -> Model -> ( Model, Cmd msg )
@@ -47,9 +53,11 @@ I like to do things with computers.
 
 ## Career Summary
 
+- [04/2018 ~ Current] Mercari Inc. // Machine Learning Team // Software Engineer
+- [01/2018 ~ Current] Japan Plant Factory Association // Researcher
 - [08/2017 ~ 08/2017] Mercari Inc. // Machine Learning Team // Summer Internship
 - [10/2016 ~ 10/2017] MIT Media Lab // Open Agriculture Initiative // Projects Assistant
-- [04/2016 ~ current] Mogura Inc. // Mogura VR // Writer & VR Developer
+- [04/2016 ~ Current] Mogura Inc. // Mogura VR // Writer & VR Developer
 - [08/2015 ~ 04/2016] Colopl Inc. // VR Development Team // VR Developer
 - [02/2015 ~ 06/2015] Team IcARus // Software Developer (Mainly VR)
 - [02/2014 ~ 04/2014] Candle Inc. // Moode // Software Developer
