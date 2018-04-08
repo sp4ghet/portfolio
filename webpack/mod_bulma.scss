@@ -129,6 +129,12 @@ $footer-background-color: $white;
   height: 100%;
 }
 
+.project-picture {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 canvas.background {
   position: fixed;
   left: 0;

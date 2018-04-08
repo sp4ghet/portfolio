@@ -36,7 +36,8 @@ contents model =
                     , ( "padding", "3vh 0" )
                     ]
                 ]
-                [ h1 [ class "is-title" ] [ text "Rikuo Hasegawa // 長谷川陸央 // ﾊｾｶﾞﾜ ﾘｸｵ" ]
+                [ h1 [ class "is-title" ] [ text "Rikuo Hasegawa // 長谷川陸央 // sp4ghet" ]
+                , div [] [ img [ src "assets/img/icons/icon.png" ] [] ]
                 , div []
                     [ a [ href model.twitterUrl, class "icon has-text-link", target "_blank" ] [ i [ class "ion-social-twitter-outline" ] [] ]
                     , a [ href model.facebookUrl, class "icon has-text-link", target "_blank" ] [ i [ class "ion-social-facebook-outline" ] [] ]

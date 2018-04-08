@@ -7,9 +7,9 @@ content : Project
 content =
     Project "Aquaponics"
         "aquaponics"
-        "./assets/img/projects/aquap/square.jpg"
+        "./assets/img/projects/aquap/square.png"
         [ Description initialDescription
-        , Picture "./assets/img/projects/aquap/first.png"
+        , Picture "./assets/img/projects/aquap/first.jpg"
         , Description middleschoolDescription
         , Description highschoolDescription
         , Picture "./assets/img/projects/aquap/whole.jpg"

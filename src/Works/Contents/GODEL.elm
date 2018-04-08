@@ -9,7 +9,7 @@ content =
         "godel"
         "./assets/img/projects/GODEL/square.png"
         [ Description initialDescription
-        , Picture "./assets/img/projects/GODEL/frontend.png"
+        , Picture "./assets/img/projects/GODEL/frontend.jpg"
         , Description systemDescription
         , Picture "./assets/img/projects/GODEL/architecture.png"
         , Description "For more details see the [writeup](./assets/img/projects/GODEL/spring-2017-poster.pdf)"

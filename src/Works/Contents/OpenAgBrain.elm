@@ -10,10 +10,10 @@ content =
         "./assets/img/projects/openag_brain/square.jpg"
         [ Picture "./assets/img/projects/openag_brain/pfc2_render.jpg"
         , Description initialDescription
-        , Picture "./assets/img/projects/openag_brain/hardware-asm.png"
+        , Picture "./assets/img/projects/openag_brain/hardware-asm.jpg"
         , Picture "./assets/img/projects/openag_brain/ui.jpg"
         , Description fermentaBotDescription
-        , Picture "https://raw.githubusercontent.com/OpenAgInitiative/fermentabot/master/IMG_1137.jpg"
+        , Picture "./assets/img/projects/openag_brain/fermenta.jpg"
         ]
 
 
