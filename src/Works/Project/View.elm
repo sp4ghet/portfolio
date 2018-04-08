@@ -17,7 +17,7 @@ root model =
         [ Html.map Nav (navBar model.navModel)
         , section
             [ class "section"
-            , style [ ( "padding", "0 10rem" ) ]
+            , style [ ( "padding", "0 10vw" ) ]
             ]
             [ div
                 [ class "article-container"
@@ -29,7 +29,7 @@ root model =
                         , class "container"
                         , style
                             [ ( "width", "80%" )
-                            , ( "padding-top", "3rem" )
+                            , ( "padding-top", "3vh" )
                             ]
                         ]
                         [ h1

@@ -25,7 +25,7 @@ contents : Model -> Html Msg
 contents model =
     section
         [ class "section"
-        , style [ ( "padding", "0 10rem" ) ]
+        , style [ ( "padding", "0 10vw" ) ]
         ]
         [ div [ class "article-container" ]
             [ div
@@ -33,7 +33,7 @@ contents model =
                 , class "container content"
                 , style
                     [ ( "width", "80%" )
-                    , ( "padding", "3rem 0" )
+                    , ( "padding", "3vh 0" )
                     ]
                 ]
                 [ h1 [ class "is-title" ] [ text "Rikuo Hasegawa // 長谷川陸央 // ﾊｾｶﾞﾜ ﾘｸｵ" ]
