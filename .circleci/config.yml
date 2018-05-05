@@ -41,5 +41,6 @@ jobs:
               git checkout gh-pages
               cp -r dist/* ./
               rm -rf dist
+              git push origin gh-pages
               #./deploy.sh
             fi
