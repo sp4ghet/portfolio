@@ -38,5 +38,8 @@ jobs:
       - deploy:
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              ./deploy.sh
+              git checkout gh-pages
+              cp -r dist/* ./
+              rm -rf dist
+              #./deploy.sh
             fi
