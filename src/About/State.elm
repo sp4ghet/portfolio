@@ -58,7 +58,7 @@ I like to do things with computers.
 - [01/2018 ~ Current] Japan Plant Factory Association // Researcher
 - [08/2017 ~ 08/2017] Mercari Inc. // Machine Learning Team // Summer Internship
 - [10/2016 ~ 10/2017] MIT Media Lab // Open Agriculture Initiative // Projects Assistant
-- [04/2016 ~ Current] Mogura Inc. // Mogura VR // Writer & VR Developer
+- [04/2016 ~ Current] Mogura Inc. // Mogura VR // Writer & VR Developer ([Articles](https://www.moguravr.com/writer/writer-15309/))
 - [08/2015 ~ 04/2016] Colopl Inc. // VR Development Team // VR Developer
 - [02/2015 ~ 06/2015] Team IcARus // Software Developer (Mainly VR)
 - [02/2014 ~ 04/2014] Candle Inc. // Moode // Software Developer
@@ -73,6 +73,14 @@ I like to do things with computers.
 - 08/2015 Softbank Prize // Innovator's Summer Hackathon
 - 06/2015 Member // Tech Lab Paak (Under Recruit Ltd.)
 - 04/2015 Best Prize // BizJapan VRHMD Hackathon
+
+----
+
+## Publications
+
+- GODEL [poster](/assets/img/projects/GODEL/spring-2017-poster.pdf) // MIT Media Lab Members' Week // **Rikuo Hasegawa**
+- Aquaponics ([EN](/assets/pdf/2014.pdf)/[JP](/assets/pdf/2015.pdf)) // Kokusai High School Individual Research Project // **Rikuo Hasegawa**
+- 世界における人工光型植物工場の研究開発－課題と展望－ // アグリバイオ　2018年6月号 // 古在 豊樹, 魯 娜, **長谷川 陸央**, 雨谷 弓弥子, 布村　伊, 野崎 友美, Yu Zhang, 林　絵理
 
 ----
 
