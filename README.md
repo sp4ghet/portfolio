@@ -1,5 +1,7 @@
 # portfolio [![CircleCI](https://circleci.com/gh/sp4ghet/portfolio.svg?style=svg)](https://circleci.com/gh/sp4ghet/portfolio)
 
+![](assets/img/projects/CG/webpage.jpg)
+
 ## Get Started
 
 ```shell
