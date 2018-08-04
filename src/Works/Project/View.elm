@@ -15,31 +15,29 @@ root model =
         [ radialCosineGradient waveform "top left"
         ]
         [ Html.map Nav (navBar model.navModel)
-        , section
-            [ class "section"
-            , style [ ( "padding", "0 10vw" ) ]
+        , div
+            [ class "article-container"
+            , class "container is-widescreen"
             ]
-            [ div
-                [ class "article-container"
-                ]
-              <|
-                List.append
-                    [ div
-                        [ class "content"
-                        , class "container"
-                        , style
-                            [ ( "width", "80%" )
-                            , ( "padding-top", "3vh" )
-                            ]
-                        ]
-                        [ h1
-                            [ style [ ( "color", "white" ) ] ]
-                            [ text model.project.title ]
+          <|
+            List.append
+                [ div
+                    [ class "content"
+                    , class "container is-widescreen"
+                    , style
+                        [ ( "width", "80%" )
+                        , ( "padding-top", "3vh" )
                         ]
                     ]
-                <|
-                    List.map render model.project.contents
-            ]
+                    [ h1
+                        [ class "is-size-1-desktop"
+                        , style [ ( "color", "white" ) ]
+                        ]
+                        [ text model.project.title ]
+                    ]
+                ]
+            <|
+                List.map render model.project.contents
         , copyrightFooter
         ]
 
@@ -50,7 +48,7 @@ render content =
         rendered =
             case content of
                 Description markdown ->
-                    Markdown.toHtml [] markdown
+                    Markdown.toHtml [ class "is-size-5-desktop" ] markdown
 
                 Picture imgUrl ->
                     img

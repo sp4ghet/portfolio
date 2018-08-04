@@ -36,13 +36,13 @@ description =
 
 Philomath Craftsman; Ideally a polymath but not quite there yet.
 
-I like to do things with computers.
+Pursuing aesthetic tooling and aesthetic work.
 
 ----
 
 ## Interests and Skills
 
-- Graphics // xR // Complex Systems // Functional Programming // Aquaponics // Controlled Environment Agriculture // Web (Front|Back)end
+Graphics // xR // Complex Systems // Functional Programming // Aquaponics // Controlled Environment Agriculture // Web (Front|Back)end
 
 ----
 
@@ -81,7 +81,7 @@ I like to do things with computers.
 - GODEL [poster](/assets/img/projects/GODEL/spring-2017-poster.pdf) // MIT Media Lab Members' Week // **Rikuo Hasegawa**
 - Aquaponics ([EN](/assets/pdf/2014.pdf)/[JP](/assets/pdf/2015.pdf)) // Kokusai High School Individual Research Project // **Rikuo Hasegawa**
 - [Cancel detection of transactions based on chat messages](http://tech.mercari.com/entry/2017/09/21/170000) // Mercari Tech Blog // **Rikuo Hasegawa**
-- 世界における人工光型植物工場の研究開発－課題と展望－ // アグリバイオ　2018年6月号 // 古在 豊樹, 魯 娜, **長谷川 陸央**, 雨谷 弓弥子, 布村　伊, 野崎 友美, Yu Zhang, 林　絵理
+- 世界における人工光型植物工場の研究開発－課題と展望－ // アグリバイオ 2018年6月号 // 古在 豊樹, 魯 娜, **長谷川 陸央**, 雨谷 弓弥子, 布村 伊, 野崎 友美, Yu Zhang, 林 絵理
 
 ----
 

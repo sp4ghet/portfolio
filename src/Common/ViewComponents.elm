@@ -156,18 +156,23 @@ copyrightFooter =
                 , class "content"
                 ]
                 [ p []
-                    [ text "© Copyright 2017 Rikuo Hasegawa. "
-                    , a
-                        [ href "https://github.com/sp4ghet/portfolio"
-                        , style [ ( "color", "#00F" ) ]
-                        ]
-                        [ text "This work" ]
-                    , text " is released under a "
-                    , a
-                        [ href "http://creativecommons.org/licenses/by-nc-sa/4.0/"
-                        , style [ ( "color", "#00F" ) ]
-                        ]
-                        [ text "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License"
+                    [ span [ class "line" ]
+                        [ text "© Copyright 2017 Rikuo Hasegawa." ]
+                    , wbr [] []
+                    , span
+                        [ class "line" ]
+                        [ a
+                            [ href "https://github.com/sp4ghet/portfolio"
+                            , style [ ( "color", "#00F" ) ]
+                            ]
+                            [ text "This work" ]
+                        , text " is released under "
+                        , a
+                            [ href "http://creativecommons.org/licenses/by-nc-sa/4.0/"
+                            , style [ ( "color", "#00F" ) ]
+                            ]
+                            [ text "CC BY-NC-SA 4.0"
+                            ]
                         ]
                     ]
                 ]
