@@ -151,7 +151,13 @@ canvas.background {
   top: 0;
 }
 
+
 .article-container {
   background-color: $hover-color;
   position: relative;
+  padding-bottom: 2.5rem;
+}
+
+.line {
+  display: inline-block;
 }
