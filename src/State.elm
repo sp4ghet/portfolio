@@ -4,6 +4,7 @@ import Top.State as Top
 import Works.State as Works
 import Works.Project.State as Project
 import About.State as About
+import Blog.State as Blog
 import Common.Helpers exposing (find, remove)
 import Types exposing (..)
 import Routing exposing (parseLocation)
@@ -20,6 +21,7 @@ init location =
             Top.init
             Works.init
             About.init
+            Blog.init
             route
         , Cmd.none
         )
@@ -86,6 +88,13 @@ update msg model =
                     About.update message model.about
             in
                 ( { model | about = aboutModel }, aboutCmd )
+
+        BlogMsg message ->
+            let
+                ( blogModel, blogCmd ) =
+                    Blog.update message model.blog
+            in
+                ( { model | blog = blogModel }, blogCmd )
 
 
 subscriptions : Model -> Sub Msg

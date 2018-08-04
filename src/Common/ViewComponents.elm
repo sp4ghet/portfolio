@@ -121,7 +121,7 @@ blog =
         , class "navbar-item"
         ]
         "assets/img/icons/blog.png"
-        "https://goonytoons.com/blog"
+        "#blog"
         "Blog"
         "ブログ"
 

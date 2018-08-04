@@ -4,6 +4,7 @@ import Types exposing (..)
 import Top.View as Top
 import Works.View as Works
 import About.View as About
+import Blog.View as Blog
 import Works.Project.View as Project
 import Common.Helpers exposing (find)
 import Html exposing (..)
@@ -32,6 +33,9 @@ root model =
 
         About ->
             Html.map AboutMsg (About.root model.about)
+
+        Blog ->
+            Html.map BlogMsg (Blog.root model.blog)
 
         NotFoundRoute ->
             div [] [ text "No such route" ]
