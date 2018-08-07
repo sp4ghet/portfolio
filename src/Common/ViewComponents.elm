@@ -158,7 +158,7 @@ copyrightFooter =
                 [ p []
                     [ span [ class "line" ]
                         [ text "© Copyright 2017 Rikuo Hasegawa." ]
-                    , wbr [] []
+                    , text " " -- space between period when not line breaking
                     , span
                         [ class "line" ]
                         [ a
