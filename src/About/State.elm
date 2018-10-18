@@ -38,16 +38,23 @@ Philomath Craftsman; Ideally a polymath but not quite there yet.
 
 I like to do things with computers.
 
+My theme is aesthetics and tools.
+
 ----
 
-## Interests and Skills
+## Skills
 
-- Graphics // xR // Complex Systems // Functional Programming // Aquaponics // Controlled Environment Agriculture // Web (Front|Back)end
+- Graphics // xR  // Functional Programming // Aquaponics // Controlled Environment Agriculture // Web (Front|Back)end // Optimization // DevOps // SysML // Data Engineer
+
+## Interests
+
+- Aesthetics // Tools // Complex Systems // Compilers // Language (synthetic|natural) // Math // Visuals
 
 ----
 
 ## Education
 
+- [09/2018 ~ Current] University College London
 - [04/2013 ~ 03/2016] Tokyo Metropolitan Kokusai High School
 
 ----
@@ -55,7 +62,7 @@ I like to do things with computers.
 ## Career Summary
 
 - [04/2018 ~ Current] Mercari Inc. // Machine Learning Team // Software Engineer
-- [01/2018 ~ Current] Japan Plant Factory Association // Researcher
+- [01/2018 ~ 09/2018] Japan Plant Factory Association // Researcher
 - [08/2017 ~ 08/2017] Mercari Inc. // Machine Learning Team // Summer Internship
 - [10/2016 ~ 10/2017] MIT Media Lab // Open Agriculture Initiative // Projects Assistant
 - [04/2016 ~ Current] Mogura Inc. // Mogura VR // Writer & VR Developer ([Articles](https://www.moguravr.com/writer/writer-15309/))
@@ -78,6 +85,7 @@ I like to do things with computers.
 
 ## Publications
 
+- Data Warehouse for Plant Phenotyping in Plant Factories // Japanese Society of Agricultural Biological and Environmental Engineers and Scientists // **Rikuo Hasegawa**
 - GODEL [poster](/assets/img/projects/GODEL/spring-2017-poster.pdf) // MIT Media Lab Members' Week // **Rikuo Hasegawa**
 - Aquaponics ([EN](/assets/pdf/2014.pdf)/[JP](/assets/pdf/2015.pdf)) // Kokusai High School Individual Research Project // **Rikuo Hasegawa**
 - [Cancel detection of transactions based on chat messages](http://tech.mercari.com/entry/2017/09/21/170000) // Mercari Tech Blog // **Rikuo Hasegawa**
@@ -87,6 +95,7 @@ I like to do things with computers.
 
 ## Talks, Exhibits, and Interviews
 
+- 09/2018 [conference talk] Data Warehouse for Plant Phenotyping in Plant Factories // JSABEES 2018
 - 01/2016 [talk] _U18 僕らの未来 ～伊藤穰一と中高生の白熱トークライブ～_ // NHK (TV)
 - 01/2016 [interview] _現役学生プログラマーが力を入れる、循環型のエコシステム"アクアポニックス"_ // sensors.jp
   - http://www.sensors.jp/post/demoday_7.html
