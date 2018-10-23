@@ -12,7 +12,7 @@ import Works.Contents.GODEL as GODEL
 import Works.Contents.Fab as Fab
 import Works.Contents.Aquaponics as Aquaponics
 import Works.Contents.Lisp as Lisp
-
+import Works.Contents.VJ as VJ
 
 projects : List Project
 projects =
@@ -24,4 +24,5 @@ projects =
     , Fab.content
     , Pong.content
     , Lisp.content
+    , VJ.content
     ]
