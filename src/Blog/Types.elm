@@ -1,12 +1,12 @@
 module Blog.Types exposing (..)
 
 import Common.Types exposing (NavModel, NavMsg)
-import Blog.Article.Types exposing (Article)
+import Blog.Article.Types as Article
 
 
 type alias Model =
     { navModel : NavModel
-    , articles : List Article
+    , articles : List Article.Model
     }
 
 

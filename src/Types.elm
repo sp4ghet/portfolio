@@ -6,6 +6,7 @@ import Works.Types as Works
 import Works.Project.Types as Project
 import About.Types as About
 import Blog.Types as Blog
+import Blog.Article.Types as Article
 
 
 type alias Model =
@@ -23,6 +24,7 @@ type Msg
     | ProjectMsg Project.Msg
     | AboutMsg About.Msg
     | BlogMsg Blog.Msg
+    | ArticleMsg Article.Msg
     | OnLocationChange Location
 
 
@@ -31,5 +33,6 @@ type Routes
     | Works
     | Work String
     | About
-    | Blog
+    | Blogs
+    | Blog String
     | NotFoundRoute
