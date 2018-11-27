@@ -3,7 +3,6 @@ module Common.ViewComponents exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
-import Common.Styling exposing (..)
 import Common.Types exposing (..)
 
 

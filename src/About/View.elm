@@ -1,7 +1,6 @@
 module About.View exposing (root)
 
 import About.Types exposing (..)
-import Common.Styling exposing (..)
 import Common.ViewComponents exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
