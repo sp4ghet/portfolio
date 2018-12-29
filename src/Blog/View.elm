@@ -6,6 +6,7 @@ import Common.ViewComponents exposing (navBar)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Date
+import Markdown
 
 
 root : Model -> Html Msg
@@ -75,7 +76,7 @@ summary articleModel =
                         ]
                     ]
                     [ p []
-                        [ text article.summary
+                        [ Markdown.toHtml [] article.summary
                         , a
                             [ href ("#blog/" ++ article.id)
                             ]

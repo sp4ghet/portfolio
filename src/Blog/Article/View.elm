@@ -3,40 +3,52 @@ module Blog.Article.View exposing (root)
 import Blog.Article.Types exposing (..)
 import Common.Styling exposing (..)
 import Common.ViewComponents exposing (navBar)
+import Common.Ports exposing (reloadInsta)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Json.Encode as Encode
 import Markdown
+import Date
 
 
 root : Model -> Html Msg
 root model =
-    div []
-        [ Html.map Nav (navBar model.navModel)
-        , div
-            [ class "article-container"
-            , class "container is-widescreen"
-            ]
-          <|
-            List.append
-                [ div
-                    [ class "content"
-                    , class "container is-widescreen"
-                    , style
-                        [ ( "width", "80%" )
-                        , ( "padding-top", "3vh" )
-                        ]
-                    ]
-                    [ h1
-                        [ class "is-size-1-desktop"
-                        , style [ ( "color", "white" ) ]
-                        ]
-                        [ text model.article.title ]
-                    ]
+    let
+        dateString =
+            case model.article.postDate of
+                Ok date ->
+                    toString (Date.month date) ++ "/" ++ toString (Date.day date) ++ "/" ++ toString (Date.year date)
+
+                Err err ->
+                    "no date"
+    in
+        div []
+            [ Html.map Nav (navBar model.navModel)
+            , div
+                [ class "article-container"
+                , class "container is-widescreen"
                 ]
-            <|
-                List.map render model.article.body
-        ]
+              <|
+                List.append
+                    [ div
+                        [ class "content"
+                        , class "container is-widescreen"
+                        , style
+                            [ ( "width", "80%" )
+                            , ( "padding-top", "3vh" )
+                            ]
+                        ]
+                        [ h1
+                            [ class "is-size-1-desktop"
+                            , style [ ( "color", "white" ) ]
+                            ]
+                            [ text model.article.title ]
+                        , span [] [ text dateString ]
+                        ]
+                    ]
+                <|
+                    List.map render model.article.body
+            ]
 
 
 render : Content -> Html msg
@@ -79,6 +91,16 @@ render content =
                             , attribute "frameborder" "0"
                             , attribute "gesture" "media"
                             , src ("https://www.youtube-nocookie.com/embed/" ++ videoId ++ "?rel=0&showinfo=0")
+                            ]
+                            []
+                        ]
+
+                Instagram postId ->
+                    div [ class "insta-container" ]
+                        [ blockquote
+                            [ class "instagram-media"
+                            , attribute "data-instgrm-permalink" <| "https://www.instagram.com/p/" ++ postId ++ "/"
+                            , attribute "data-instgrm-version" "12"
                             ]
                             []
                         ]
