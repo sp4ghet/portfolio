@@ -179,3 +179,15 @@ canvas.background {
   width:-webkit-calc(100% - 2px);
   width:calc(100% - 2px);
 }
+
+.insta-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width:540px;
+  min-width:326px;
+}
+
+.content blockquote,
+.content pre {
+  color: #676767;
+}

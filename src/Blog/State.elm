@@ -6,13 +6,11 @@ import Blog.Article.State as Article
 import Blog.Contents.Main exposing (articles)
 
 
-init : ( Model, Cmd Msg )
+init : Model
 init =
-    ( Model
+    Model
         Navbar.initNav
         (articles |> List.map (\x -> Tuple.first <| Article.init x))
-    , Cmd.none
-    )
 
 
 update : Msg -> Model -> ( Model, Cmd msg )

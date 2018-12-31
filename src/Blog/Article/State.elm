@@ -7,7 +7,7 @@ import Common.State as Navbar
 
 init : Article -> ( Model, Cmd Msg )
 init article =
-    ( Model article Navbar.initNav, reloadInsta "" )
+    ( Model article Navbar.initNav, Cmd.none )
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )

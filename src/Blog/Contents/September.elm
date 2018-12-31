@@ -12,6 +12,8 @@ article =
         (Date.fromString "10/03/2017")
         summary
         [ Words mainText
+        , Instagram "BZCkX_JFrR9"
+        , Words secondText
         , Instagram "BZl49Etly5q"
         , Words rest
         ]
@@ -42,11 +44,12 @@ mainText =
 ### Ig Nobel Prize
 
 イグノーベル賞の授賞式に行ってきました。
+"""
 
-> [Ig Nobel Prize](https://www.instagram.com/p/BZCkX_JFrR9/)
->
-> A post shared by Rikuo Hasegawa (@spaghet_rikuo) on Sep 14, 2017 at 4:37pm PDT
 
+secondText : String
+secondText =
+    """
 登壇の時間超過すると８歳時が出てきて"Please stop, I'm bored. Please stop, I'm bored. Please stop, I'm bored"と連呼したり、なんか紙飛行機投げたり、Uncertaintyと誰かが言ったらWOOOOO!!!!って言ったり、よくわからない感じでしたが「まず笑わせ、そしてふと考えさせられる研究」という評価軸は非常に面白いし本質を突いているんだろうなと思いました。 高校生が理想的なコーヒーの運搬方法について８５ページぐらいの論文を書いて受賞したりもしていたのですごいなぁと思ったり、新鮮だった。
 
 ### たくさん読み物をした

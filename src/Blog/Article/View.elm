@@ -97,12 +97,14 @@ render content =
 
                 Instagram postId ->
                     div [ class "insta-container" ]
-                        [ blockquote
-                            [ class "instagram-media"
-                            , attribute "data-instgrm-permalink" <| "https://www.instagram.com/p/" ++ postId ++ "/"
-                            , attribute "data-instgrm-version" "12"
+                        [ div [ class "insta-wrapper" ]
+                            [ blockquote
+                                [ class "instagram-media"
+                                , attribute "data-instgrm-permalink" <| "https://www.instagram.com/p/" ++ postId ++ "/"
+                                , attribute "data-instgrm-version" "12"
+                                ]
+                                []
                             ]
-                            []
                         ]
     in
         div

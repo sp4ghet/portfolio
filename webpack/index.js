@@ -13,5 +13,5 @@ var app = Elm.App.embed(mountNode)
 
 app.ports.reloadInsta.subscribe(function(_) {
   console.log(`${_} running port...`)
-  window.instgrm.Embeds.process()
+  setTimeout(window.instgrm.Embeds.process, 32)
 })

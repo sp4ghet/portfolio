@@ -7,6 +7,7 @@ import About.State as About
 import Blog.State as BlogState
 import Blog.Article.State as Article
 import Common.Helpers exposing (find, remove)
+import Common.Ports exposing (reloadInsta)
 import Types exposing (..)
 import Routing exposing (parseLocation)
 import Navigation exposing (Location)
@@ -18,14 +19,21 @@ init location =
         route =
             parseLocation location
     in
-        ( Model
-            Top.init
-            Works.init
-            About.init
-            BlogState.init
-            route
-        , Cmd.none
-        )
+        let
+            model =
+                Model
+                    Top.init
+                    Works.init
+                    About.init
+                    BlogState.init
+                    route
+        in
+            case route of
+                Blog articleId ->
+                    ( model, reloadInsta "init" )
+
+                _ ->
+                    ( model, Cmd.none )
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -36,7 +44,12 @@ update msg model =
                 newRoute =
                     parseLocation location
             in
-                ( { model | route = newRoute }, Cmd.none )
+                case newRoute of
+                    Blog articleId ->
+                        ( { model | route = newRoute }, reloadInsta "newRoute" )
+
+                    _ ->
+                        ( { model | route = newRoute }, Cmd.none )
 
         TopMsg message ->
             let

@@ -9,6 +9,4 @@ import Blog.Contents.September as September
 articles : List Article
 articles =
     [ September.article
-    , Aesthetics.article
-    , Hoge.article
     ]
