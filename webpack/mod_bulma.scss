@@ -21,7 +21,7 @@ $cosine-gradient: radial-gradient(circle at left top,
   rgb(220, 255, 71),
   rgb(154, 255, 47));
 
-$hover-color: rgba(0,0,0, 0.5);
+$hover-color: rgba(0,0,0,0.5);
 
 $family-san-serif: "koz", "Helvetica", "Roboto", "Ubuntu", san-serif;
 
@@ -59,6 +59,10 @@ $navbar-dropdown-background-color: transparent;
 
 $footer-background-color: $white;
 
+$card-background-color: transparent;
+$card-header-shadow: 0 1px 2px rgba($white, 0.1);
+$card-shadow: 0 2px 3px rgba($white, 0.1), 0 0 0 1px rgba($white, 0.1);
+$card-footer-border-top: 1px solid rgba($white, 0.1);
 
 @import "../node_modules/bulma/bulma";
 
@@ -151,7 +155,39 @@ canvas.background {
   top: 0;
 }
 
+
 .article-container {
   background-color: $hover-color;
   position: relative;
+  padding-bottom: 2.5rem;
+}
+
+.line {
+  display: inline-block;
+}
+
+.instagram-media {
+  background:#FFF;
+  border:0;
+  border-radius:3px;
+  box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);
+  margin: 1px;
+  max-width:540px;
+  min-width:326px;
+  padding:0;
+  width:99.375%;
+  width:-webkit-calc(100% - 2px);
+  width:calc(100% - 2px);
+}
+
+.insta-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width:540px;
+  min-width:326px;
+}
+
+.content blockquote,
+.content pre {
+  color: #676767;
 }

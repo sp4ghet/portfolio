@@ -17,6 +17,8 @@ matchers =
         , map Works (s "works")
         , map Work (s "works" </> string)
         , map About (s "about")
+        , map Blogs (s "blog")
+        , map Blog (s "blog" </> string)
         ]
 
 
