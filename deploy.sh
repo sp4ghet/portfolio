@@ -34,7 +34,6 @@ fi
 
 # copy over or recompile the new site
 cp -a "../dist/." .
-cp "../dist/assets/img/icons/favicons/favicon.ico" .
 
 # stage any changes and new files
 git add -A
