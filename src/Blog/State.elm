@@ -15,4 +15,13 @@ init =
 
 update : Msg -> Model -> ( Model, Cmd msg )
 update msg model =
-    ( model, Cmd.none )
+    case msg of
+        Nav navMsg ->
+            let
+                ( navModel, navCmd ) =
+                    Navbar.updateNav navMsg model.navModel
+            in
+                ( { model | navModel = navModel }, navCmd )
+
+        _ ->
+            ( model, Cmd.none )
