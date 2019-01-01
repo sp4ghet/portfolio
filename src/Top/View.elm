@@ -1,7 +1,6 @@
 module Top.View exposing (root)
 
 import Top.Types exposing (..)
-import Common.Styling exposing (..)
 import Common.ViewComponents exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)

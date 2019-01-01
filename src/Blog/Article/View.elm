@@ -1,45 +1,54 @@
-module Works.Project.View exposing (root)
+module Blog.Article.View exposing (root)
 
+import Blog.Article.Types exposing (..)
 import Common.Styling exposing (..)
-import Common.ViewComponents exposing (..)
-import Works.Project.Types exposing (..)
+import Common.ViewComponents exposing (navBar)
+import Common.Ports exposing (reloadInsta)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Json.Encode as Encode
 import Markdown
+import Date
 
 
 root : Model -> Html Msg
 root model =
-    div
-        [ radialCosineGradient waveform "top left"
-        ]
-        [ Html.map Nav (navBar model.navModel)
-        , div
-            [ class "article-container"
-            , class "container is-widescreen"
-            ]
-          <|
-            List.append
-                [ div
-                    [ class "content"
-                    , class "container is-widescreen"
-                    , style
-                        [ ( "width", "80%" )
-                        , ( "padding-top", "3vh" )
-                        ]
-                    ]
-                    [ h1
-                        [ class "is-size-1-desktop"
-                        , style [ ( "color", "white" ) ]
-                        ]
-                        [ text model.project.title ]
-                    ]
+    let
+        dateString =
+            case model.article.postDate of
+                Ok date ->
+                    toString (Date.month date) ++ "/" ++ toString (Date.day date) ++ "/" ++ toString (Date.year date)
+
+                Err err ->
+                    "no date"
+    in
+        div []
+            [ Html.map Nav (navBar model.navModel)
+            , div
+                [ class "article-container"
+                , class "container is-widescreen"
                 ]
-            <|
-                List.map render model.project.contents
-        , copyrightFooter
-        ]
+              <|
+                List.append
+                    [ div
+                        [ class "content"
+                        , class "container is-widescreen"
+                        , style
+                            [ ( "width", "80%" )
+                            , ( "padding-top", "3vh" )
+                            ]
+                        ]
+                        [ h1
+                            [ class "is-size-1-desktop"
+                            , style [ ( "color", "white" ) ]
+                            ]
+                            [ text model.article.title ]
+                        , span [] [ text dateString ]
+                        ]
+                    ]
+                <|
+                    List.map render model.article.body
+            ]
 
 
 render : Content -> Html msg
@@ -47,7 +56,7 @@ render content =
     let
         rendered =
             case content of
-                Description markdown ->
+                Words markdown ->
                     Markdown.toHtml [ class "is-size-5-desktop" ] markdown
 
                 Picture imgUrl ->
@@ -84,6 +93,18 @@ render content =
                             , src ("https://www.youtube-nocookie.com/embed/" ++ videoId ++ "?rel=0&showinfo=0")
                             ]
                             []
+                        ]
+
+                Instagram postId ->
+                    div [ class "insta-container" ]
+                        [ div [ class "insta-wrapper" ]
+                            [ blockquote
+                                [ class "instagram-media"
+                                , attribute "data-instgrm-permalink" <| "https://www.instagram.com/p/" ++ postId ++ "/"
+                                , attribute "data-instgrm-version" "12"
+                                ]
+                                []
+                            ]
                         ]
     in
         div
