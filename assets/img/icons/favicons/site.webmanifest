@@ -3,12 +3,12 @@
     "short_name": "",
     "icons": [
         {
-            "src": "https://sp4ghet.com/assets/icons/favicons/android-chrome-192x192.png",
+            "src": "https://sp4ghet.com/assets/img/icons/favicons/android-chrome-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "https://sp4ghet.com/assets/icons/favicons/android-chrome-512x512.png",
+            "src": "https://sp4ghet.com/assets/img/icons/favicons/android-chrome-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
         }
