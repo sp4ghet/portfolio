@@ -1,7 +1,6 @@
 module Blog.Article.State exposing (..)
 
 import Blog.Article.Types exposing (..)
-import Common.Ports exposing (reloadInsta)
 import Common.State as Navbar
 
 

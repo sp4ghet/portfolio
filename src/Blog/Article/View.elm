@@ -1,14 +1,21 @@
 module Blog.Article.View exposing (root)
 
 import Blog.Article.Types exposing (..)
-import Common.Styling exposing (..)
 import Common.ViewComponents exposing (navBar)
-import Common.Ports exposing (reloadInsta)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Json.Encode as Encode
-import Markdown
+import MarkdownMath
 import Date
+
+
+markdownOptions : MarkdownMath.Options
+markdownOptions =
+    { githubFlavored = Just { tables = True, breaks = True }
+    , defaultHighlighting = Nothing
+    , sanitize = False
+    , smartypants = False
+    }
 
 
 root : Model -> Html Msg
@@ -57,7 +64,7 @@ render content =
         rendered =
             case content of
                 Words markdown ->
-                    Markdown.toHtml [ class "is-size-5-desktop" ] markdown
+                    MarkdownMath.toHtmlWith markdownOptions [ class "is-size-5-desktop" ] markdown
 
                 Picture imgUrl ->
                     img

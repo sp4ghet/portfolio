@@ -30,10 +30,17 @@ jobs:
             - node_modules
           key: yarn-packages-{{ .Branch }}-{{ checksum "yarn.lock" }}
 
-      # run tests!
-      - run: npm run test
+      - run: yarn global add elm-github-install
+      - run: elm-github-install
 
-      - run: npm run build
+      # - save_cache:
+      #     name: elm-cache
+      #     paths:
+      #       - elm-stuff
+      #     key: elm-packages-{{ checksum "elm-package.json" }}
+
+      - run: yarn test
+      - run: yarn build
 
       - deploy:
           command: |
