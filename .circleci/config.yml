@@ -21,6 +21,10 @@ jobs:
             - yarn-packages-{{ .Branch }}
             - yarn-packages-master
             - yarn-packages-
+            - elm-packages-
+            - elm-packages-{{ .Branch }}
+            - elm-packages-master
+            - elm-packages-{{ .Branch }}.{{ checksum "elm-package.json" }}
 
       - run: yarn install
 
@@ -33,14 +37,17 @@ jobs:
       - run: yarn global add elm-github-install
       - run: $(yarn global bin)/elm-github-install
 
-      # - save_cache:
-      #     name: elm-cache
-      #     paths:
-      #       - elm-stuff
-      #     key: elm-packages-{{ checksum "elm-package.json" }}
-
       - run: yarn test
-      - run: yarn build
+      - run:
+          name: Build dist files
+          command: yarn build
+          no_output_timeout: 1h
+
+      - save_cache:
+          name: elm-cache
+          paths:
+            - elm-stuff
+          key: elm-packages-{{ .Branch }}-{{ checksum "elm-package.json" }}
 
       - deploy:
           command: |
