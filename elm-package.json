@@ -15,7 +15,8 @@
         "elm-lang/navigation": "2.1.0 <= v < 3.0.0",
         "evancz/elm-markdown": "3.0.0 <= v < 4.0.0",
         "sp4ghet/elm-markdown-math": "1.0.0 <= v < 2.0.0",
-        "evancz/url-parser": "2.0.1 <= v < 3.0.0"
+        "evancz/url-parser": "2.0.1 <= v < 3.0.0",
+        "elm-community/list-extra": "7.0.0 <= v < 8.0.0"
     },
     "dependency-sources": {
       "sp4ghet/elm-markdown-math": "git@github.com:sp4ghet/elm-markdown-math"

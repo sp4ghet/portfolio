@@ -6,7 +6,7 @@ import Works.Project.State as Project
 import About.State as About
 import Blog.State as BlogState
 import Blog.Article.State as Article
-import Common.Helpers exposing (find, remove)
+import List.Extra exposing (replaceIf, find)
 import Common.Ports exposing (reloadInsta)
 import Types exposing (..)
 import Routing exposing (parseLocation)
@@ -69,8 +69,11 @@ update msg model =
             case model.route of
                 Work projectId ->
                     let
+                        predicate =
+                            (\x -> x.project.id == projectId)
+
                         projectMaybe =
-                            find (\x -> x.project.id == projectId) model.works.projects
+                            find predicate model.works.projects
                     in
                         case projectMaybe of
                             Just project ->
@@ -80,7 +83,7 @@ update msg model =
 
                                     -- TODO: This makes the ordering of work in the "Works" page different when you return after viewing a project page
                                     newProjects =
-                                        List.append [ projectModel ] (remove project <| model.works.projects)
+                                        replaceIf predicate projectModel model.works.projects
 
                                     oldWorks =
                                         model.works
@@ -114,8 +117,11 @@ update msg model =
             case model.route of
                 Blog blogId ->
                     let
+                        predicate =
+                            (\x -> x.article.id == blogId)
+
                         blogMaybe =
-                            find (\x -> x.article.id == blogId) model.blog.articles
+                            find predicate model.blog.articles
                     in
                         case blogMaybe of
                             Just article ->
@@ -124,7 +130,7 @@ update msg model =
                                         Article.update message article
 
                                     newArticles =
-                                        List.append [ articleModel ] (remove article <| model.blog.articles)
+                                        replaceIf predicate articleModel model.blog.articles
 
                                     oldBlog =
                                         model.blog
