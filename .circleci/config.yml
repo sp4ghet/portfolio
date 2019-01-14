@@ -23,10 +23,10 @@ jobs:
             - yarn-packages-
       - restore_cache:
           keys:
-            - elm-packages-
+            - elm-packages-{{ .Branch }}.{{ checksum "elm-package.json" }}
             - elm-packages-{{ .Branch }}
             - elm-packages-master
-            - elm-packages-{{ .Branch }}.{{ checksum "elm-package.json" }}
+            - elm-packages-
 
       - run: yarn install
 
