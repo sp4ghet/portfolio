@@ -9,7 +9,7 @@ article =
     Article
         "VJってやつをやりました"
         "vj"
-        (Date.fromString "01/14/2018")
+        (Date.fromString "01/14/2019")
         "InfiniteRaveというVJイベントを開催しました。個人的にはVJ・クリエイティブコーディング界隈の大御所の方々にtwitterでフィードバック頂いたり、やきとり食べたりできたのでだいぶ幸せです。"
         [ Words mainText
         , Youtube "OTTJK_li17s"
