@@ -55,6 +55,7 @@ mainText =
 """
 
 
+secondText : String
 secondText =
     """
 ## VJシステム
@@ -88,6 +89,7 @@ GlobalStateを用意する利点のひとつとしてはBPMなどを一つの場
 """
 
 
+thirdText : String
 thirdText =
     """
 オーディオリアクティブな素材が3つあります。4分音符＋低い音に反応して発生する正n角形メッシュのRadialMeshと、8部音符+中くらいの音に発生する絵文字のパーティクルと、オーディオビジュアライザっぽい動きをするWaveTunnelです。前者ふたつはkeijiro/LaspのLowPassPeakやBandPassPeakを使っており、最後のはGetSpectrumの波形をLog変換して渡しています。
@@ -104,6 +106,7 @@ RandomGradientを生成するときに、色味の統一感を維持しつつラ
 """
 
 
+references : String
 references =
     """
 ## 参考資料
