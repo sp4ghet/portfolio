@@ -163,6 +163,8 @@ canvas.background {
   background-color: $hover-color;
   position: relative;
   padding-bottom: 2.5rem;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .line {
