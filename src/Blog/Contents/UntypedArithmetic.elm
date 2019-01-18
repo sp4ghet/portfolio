@@ -7,7 +7,7 @@ import Date exposing (Date)
 article : Article
 article =
     Article
-        "Untyped Arithmetic and Proofs about Languages (Part 1)"
+        "TaPL Summary Part 1: Untyped Arithmetic and Proofs about Languages"
         "untyped-arithmetic-1"
         (Date.fromString "01/16/2019")
         "I've recently been reading Types and Programming Languages (TaPL) and figured I should take notes while I do so. This is from Chapter 3, Untyped Arithmetic. I will try to explain the contents from Chapter 1 and 2 as needed but will keep to explaining the simple arithmetic language described in chapter 3 as well as showing how we can investigate it using Operational Semantics."
@@ -124,9 +124,11 @@ $$\\mathtt{if~(if~true~then~true~else~false)}
 
 We evaluate the condition term of the if statement before we evaluate the content terms to return. The transition rule $$\\text{E-IF}$$ determines the behaviour, the order of operations in this case, of our abstract interpreter.
 
-Let us explicitly make note of a property of this semantics. Note that this is only true for the particular semantics we are looking at, and are aimed to describe properties of our semantics, not discern general truths about all semantics.
+Let us explicitly make note of some properties of this semantics. Note that these theorems are only true for the particular semantics we are looking at, and are aimed to describe properties of our semantics, not discern general truths about all semantics.
 
 **Theorem 3.5.4**: A transition function is deterministic, i.e. if $$\\mathtt{t}\\to\\mathtt{t'}$$ and $$\\mathtt{t}\\to\\mathtt{t''}$$ then $$\\mathtt{t'}=\\mathtt{t''}$$.
+
+That seems true. A syntactically valid term is unambiguously transitioned using one of the 3 transition functions.
 
 Now, notice how there is no rule to transition from $$\\tt{false}$$ onwards. We say that terms which cannot be transitioned from any further are in its _normal form_.
 
@@ -134,9 +136,9 @@ Now, notice how there is no rule to transition from $$\\tt{false}$$ onwards. We 
 
 **Theorem 3.5.8**: All terms in its normal form are values.
 
-Hopefully these two theorems are also self evident for our language.
+This means that in this language, all terms can be evaluated to a value. Hopefully these two theorems are also self evident for our language.
 
-We express using the symbol $$\\to^*$$ as opposed to just $$\\to$$ for a transition. We call a series of transitions from a term to its normal form an _evaluation_.
+We express a series of transitions $$\\tt{t} \\to \\tt{t'} \\to \\tt{t''}$$ using the symbol $$\\to^*$$ for brevity as $$\\tt{t} \\to^* \\tt{t''}$$. We call a series of transitions from a term to its normal form an _evaluation_.
 
 **Theorem 3.5.11**: An evaluation is deterministic, i.e. if $$\\tt{u}$$ and $$\\tt{u'}$$ are in its normal form, $$\\mathtt{t} \\to^* \\mathtt{u} ~\\land~ \\mathtt{t} \\to^* \\mathtt{u'} \\implies \\mathtt{u} = \\mathtt{u'}$$
 
