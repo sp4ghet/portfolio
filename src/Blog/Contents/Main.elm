@@ -6,12 +6,14 @@ import Blog.Contents.September as September
 import Blog.Contents.TravisDeploy as TravisDeploy
 import Blog.Contents.Multiobjective as Multiobjective
 import Blog.Contents.VJ as VJ
-import Blog.Contents.UntypedArithmetic as Untyped
+import Blog.Contents.UntypedArithmetic1 as Untyped1
+import Blog.Contents.UntypedArithmetic2 as Untyped2
 
 
 articles : List Article
 articles =
-    [ Untyped.article
+    [ Untyped2.article
+    , Untyped1.article
     , VJ.article
     , Lookback.article
     , September.article

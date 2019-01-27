@@ -1,4 +1,4 @@
-module Blog.Contents.UntypedArithmetic exposing (..)
+module Blog.Contents.UntypedArithmetic1 exposing (..)
 
 import Blog.Article.Types exposing (..)
 import Date exposing (Date)
