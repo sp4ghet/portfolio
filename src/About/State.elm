@@ -44,11 +44,11 @@ My theme is aesthetics and tools.
 
 ## Skills
 
-- Graphics // xR  // Functional Programming // Aquaponics // Controlled Environment Agriculture // Web (Front|Back)end // Optimization // DevOps // SysML // Data Engineer
+- Computer Graphics // xR  // Functional Programming // Aquaponics // Controlled Environment Agriculture // Web (Front|Back)end // Optimization // DevOps // SysML // Data Engineer
 
 ## Interests
 
-- Aesthetics // Tools // Complex Systems // Compilers // Language (synthetic|natural) // Math // Visuals
+- Aesthetics // Tools // Complex Systems // Compilers // Language (synthetic|natural) // Math // Visuals // Graphic Design // Electronics
 
 ----
 
@@ -61,11 +61,11 @@ My theme is aesthetics and tools.
 
 ## Career Summary
 
-- [04/2018 ~ Current] Mercari Inc. // Machine Learning Team // Software Engineer
+- [04/2018 ~ 05/2019] Mercari Inc. // Machine Learning Team // Software Engineer
 - [01/2018 ~ 09/2018] Japan Plant Factory Association // Researcher
 - [08/2017 ~ 08/2017] Mercari Inc. // Machine Learning Team // Summer Internship
 - [10/2016 ~ 10/2017] MIT Media Lab // Open Agriculture Initiative // Projects Assistant
-- [04/2016 ~ Current] Mogura Inc. // Mogura VR // Writer & VR Developer ([Articles](https://www.moguravr.com/writer/writer-15309/))
+- [04/2016 ~ 09/2017] Mogura Inc. // Mogura VR // Writer & VR Developer ([Articles](https://www.moguravr.com/writer/writer-15309/))
 - [08/2015 ~ 04/2016] Colopl Inc. // VR Development Team // VR Developer
 - [02/2015 ~ 06/2015] Team IcARus // Software Developer (Mainly VR)
 - [02/2014 ~ 04/2014] Candle Inc. // Moode // Software Developer
@@ -90,6 +90,19 @@ My theme is aesthetics and tools.
 - Aquaponics ([EN](/assets/pdf/2014.pdf)/[JP](/assets/pdf/2015.pdf)) // Kokusai High School Individual Research Project // **Rikuo Hasegawa**
 - [Cancel detection of transactions based on chat messages](http://tech.mercari.com/entry/2017/09/21/170000) // Mercari Tech Blog // **Rikuo Hasegawa**
 - 世界における人工光型植物工場の研究開発－課題と展望－ // アグリバイオ 2018年6月号 // 古在 豊樹, 魯 娜, **長谷川 陸央**, 雨谷 弓弥子, 布村 伊, 野崎 友美, Yu Zhang, 林 絵理
+
+----
+
+## Articles
+
+- だれでも分かる多目的最適化問題超入門 [qiita](https://qiita.com/sp4ghet/items/f3dfbfe24b0a9c4997ee)
+
+----
+
+## Shows
+
+- 05/2019 AlgoMesh @ AlgoMech // Sheffield, UK // Visuals 
+- 09/2018 InfiniteRave #1 // Tokyo, Japan // Visuals for DJ Gaku
 
 ----
 
