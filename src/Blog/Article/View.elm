@@ -2,17 +2,17 @@ module Blog.Article.View exposing (root)
 
 import Blog.Article.Types exposing (..)
 import Common.ViewComponents exposing (navBar)
+import Date
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Json.Encode as Encode
 import MarkdownMath
-import Date
 
 
 markdownOptions : MarkdownMath.Options
 markdownOptions =
     { githubFlavored = Just { tables = True, breaks = True }
-    , defaultHighlighting = Nothing
+    , defaultHighlighting = Just "csharp glsl rust html scss javascript"
     , sanitize = False
     , smartypants = False
     }
@@ -29,33 +29,33 @@ root model =
                 Err err ->
                     "no date"
     in
-        div []
-            [ Html.map Nav (navBar model.navModel)
-            , div
-                [ class "article-container"
-                , class "container is-widescreen"
-                ]
-              <|
-                List.append
-                    [ div
-                        [ class "content"
-                        , class "container is-widescreen"
-                        , style
-                            [ ( "width", "80%" )
-                            , ( "padding-top", "3vh" )
-                            ]
-                        ]
-                        [ h1
-                            [ class "is-size-1-desktop"
-                            , style [ ( "color", "white" ) ]
-                            ]
-                            [ text model.article.title ]
-                        , span [] [ text dateString ]
+    div []
+        [ Html.map Nav (navBar model.navModel)
+        , div
+            [ class "article-container"
+            , class "container is-widescreen"
+            ]
+          <|
+            List.append
+                [ div
+                    [ class "content"
+                    , class "container is-widescreen"
+                    , style
+                        [ ( "width", "80%" )
+                        , ( "padding-top", "3vh" )
                         ]
                     ]
-                <|
-                    List.map render model.article.body
-            ]
+                    [ h1
+                        [ class "is-size-1-desktop"
+                        , style [ ( "color", "white" ) ]
+                        ]
+                        [ text model.article.title ]
+                    , span [] [ text dateString ]
+                    ]
+                ]
+            <|
+                List.map render model.article.body
+        ]
 
 
 render : Content -> Html msg
@@ -114,12 +114,12 @@ render content =
                             ]
                         ]
     in
-        div
-            [ class "content"
-            , class "container"
-            , style
-                [ ( "width", "80%" )
-                ]
+    div
+        [ class "content"
+        , class "container"
+        , style
+            [ ( "width", "80%" )
             ]
-            [ rendered
-            ]
+        ]
+        [ rendered
+        ]
