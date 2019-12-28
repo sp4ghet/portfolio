@@ -8,11 +8,12 @@ import Blog.Contents.Multiobjective as Multiobjective
 import Blog.Contents.VJ as VJ
 import Blog.Contents.UntypedArithmetic1 as Untyped1
 import Blog.Contents.UntypedArithmetic2 as Untyped2
-
+import Blog.Contents.Lookback2019 as Lookback2019
 
 articles : List Article
 articles =
-    [ Untyped2.article
+    [ Lookback2019.article
+    , Untyped2.article
     , Untyped1.article
     , VJ.article
     , Lookback.article
