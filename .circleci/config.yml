@@ -50,7 +50,7 @@ jobs:
             - $CIRCLE_WORKING_DIRECTORY/sysconfcpus
           key: sysconfcpus-{{ .Branch }}
 
-      - run: npm install
+      - run: npm install --cache /tmp/empty-cache
 
       # - save_cache:
       #     name: Save npm cache
