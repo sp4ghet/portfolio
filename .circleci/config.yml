@@ -9,8 +9,10 @@ jobs:
       # specify the version you desire here
       - image: circleci/node:12.16.2
 
+    working_directory: /home/circleci/portfolio
+
     steps:
-      - run: pwd
+      - pwd
       - checkout
 
       # Download and cache dependencies
