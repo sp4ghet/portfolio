@@ -12,7 +12,6 @@ jobs:
     working_directory: /home/circleci/portfolio
 
     steps:
-      - pwd
       - checkout
 
       # Download and cache dependencies
