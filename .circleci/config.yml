@@ -43,9 +43,10 @@ jobs:
           fi
 
       - save_cache:
-        name: save sysconfcpus
-        paths: $CIRCLE_WORKING_DIRECTORY/sysconfcpus
-        key: sysconfcpus-{{ .Branch }}
+          name: save sysconfcpus
+          paths:
+            - $CIRCLE_WORKING_DIRECTORY/sysconfcpus
+          key: sysconfcpus-{{ .Branch }}
 
       - run: npm install
 
