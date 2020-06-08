@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/node:6.11
+      - image: circleci/node:12.16.2
 
     working_directory: ~/portfolio
 
@@ -17,10 +17,10 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-            - yarn-packages-{{ .Branch }}-{{ checksum "yarn.lock" }}
-            - yarn-packages-{{ .Branch }}
-            - yarn-packages-master
-            - yarn-packages-
+            - npm-packages-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - npm-packages-{{ .Branch }}
+            - npm-packages-master
+            - npm-packages-
       - restore_cache:
           keys:
             - elm-packages-{{ .Branch }}.{{ checksum "elm-package.json" }}
@@ -28,21 +28,21 @@ jobs:
             - elm-packages-master
             - elm-packages-
 
-      - run: yarn install
+      - run: npm install
 
       - save_cache:
-          name: Save yarn cache
+          name: Save npm cache
           paths:
             - node_modules
-          key: yarn-packages-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          key: npm-packages-{{ .Branch }}-{{ checksum "npm.lock" }}
 
-      - run: yarn global add elm-github-install
-      - run: $(yarn global bin)/elm-github-install
+      - run: npm install -g elm-github-install
+      - run: npx elm-github-install
 
-      - run: yarn test
+      - run: npm test
       - run:
           name: Build dist files
-          command: yarn build
+          command: npm run build
           no_output_timeout: 1h
 
       - save_cache:
