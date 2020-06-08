@@ -29,8 +29,8 @@ jobs:
             - elm-packages-
 
       - restore_cache:
-        keys:
-          - sysconfcpus-{{ .Branch }}
+          keys:
+            - sysconfcpus-{{ .Branch }}
 
       - run: |
           if [ ! -d sysconfcpus/bin ];
