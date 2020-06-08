@@ -28,6 +28,10 @@ jobs:
             - elm-packages-master
             - elm-packages-
 
+      - restore_cache:
+        keys:
+          - sysconfcpus-{{ .Branch }}
+
       - run: |
           if [ ! -d sysconfcpus/bin ];
             then
@@ -37,6 +41,11 @@ jobs:
             make && make install;
             cd ..;
           fi
+
+      - save_cache:
+        name: save sysconfcpus
+        paths: $CIRCLE_WORKING_DIRECTORY/sysconfcpus
+        key: sysconfcpus-{{ .Branch }}
 
       - run: npm install
 
