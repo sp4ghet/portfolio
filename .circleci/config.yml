@@ -27,6 +27,8 @@ jobs:
       #       - elm-packages-{{ .Branch }}
       #       - elm-packages-master
       #       - elm-packages-
+      - run: rm -rf node_modules
+      - run: rm -rf ~/.elm-install
 
       - restore_cache:
           keys:
