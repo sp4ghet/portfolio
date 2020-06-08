@@ -36,7 +36,7 @@ jobs:
             - node_modules
           key: npm-packages-{{ .Branch }}-{{ checksum "npm.lock" }}
 
-      - run: npm install -g elm-github-install
+      - run: npm elm-github-install
       - run: npx elm-github-install
 
       - run: npm test
