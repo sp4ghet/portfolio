@@ -34,9 +34,9 @@ jobs:
           name: Save npm cache
           paths:
             - node_modules
-          key: npm-packages-{{ .Branch }}-{{ checksum "npm.lock" }}
+          key: npm-packages-{{ .Branch }}-{{ checksum "package-lock.json" }}
 
-      - run: npm elm-github-install
+      - run: npm install elm-github-install
       - run: npx elm-github-install
 
       - run: npm test
