@@ -15,18 +15,18 @@ jobs:
       - checkout
 
       # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - npm-packages-{{ .Branch }}-{{ checksum "package-lock.json" }}
-            - npm-packages-{{ .Branch }}
-            - npm-packages-master
-            - npm-packages-
-      - restore_cache:
-          keys:
-            - elm-packages-{{ .Branch }}.{{ checksum "elm-package.json" }}
-            - elm-packages-{{ .Branch }}
-            - elm-packages-master
-            - elm-packages-
+      # - restore_cache:
+      #     keys:
+      #       - npm-packages-{{ .Branch }}-{{ checksum "package-lock.json" }}
+      #       - npm-packages-{{ .Branch }}
+      #       - npm-packages-master
+      #       - npm-packages-
+      # - restore_cache:
+      #     keys:
+      #       - elm-packages-{{ .Branch }}.{{ checksum "elm-package.json" }}
+      #       - elm-packages-{{ .Branch }}
+      #       - elm-packages-master
+      #       - elm-packages-
 
       - restore_cache:
           keys:
@@ -50,11 +50,11 @@ jobs:
 
       - run: npm install
 
-      - save_cache:
-          name: Save npm cache
-          paths:
-            - node_modules
-          key: npm-packages-{{ .Branch }}-{{ checksum "package-lock.json" }}
+      # - save_cache:
+      #     name: Save npm cache
+      #     paths:
+      #       - node_modules
+      #     key: npm-packages-{{ .Branch }}-{{ checksum "package-lock.json" }}
 
       - run: npm install elm-github-install
       - run: npx elm-github-install
@@ -68,11 +68,11 @@ jobs:
           command: echo $LIBSYSCONFCPUS && npm run build
           no_output_timeout: 1h
 
-      - save_cache:
-          name: elm-cache
-          paths:
-            - elm-stuff
-          key: elm-packages-{{ .Branch }}-{{ checksum "elm-package.json" }}
+      # - save_cache:
+      #     name: elm-cache
+      #     paths:
+      #       - elm-stuff
+      #     key: elm-packages-{{ .Branch }}-{{ checksum "elm-package.json" }}
 
       - deploy:
           command: |
