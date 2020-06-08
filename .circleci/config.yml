@@ -28,6 +28,16 @@ jobs:
             - elm-packages-master
             - elm-packages-
 
+      - run: |
+          if [ ! -d sysconfcpus/bin ];
+            then
+            git clone https://github.com/obmarg/libsysconfcpus.git; 
+            cd libsysconfcpus;
+            ./configure --prefix=$CIRCLE_WORKING_DIRECTORY/sysconfcpus;
+            make && make install;
+            cd ..;
+          fi
+
       - run: npm install
 
       - save_cache:
@@ -39,10 +49,13 @@ jobs:
       - run: npm install elm-github-install
       - run: npx elm-github-install
 
+      - run: mv $(npm config get prefix)/bin/elm-make $(npm config get prefix)/bin/elm-make-old
+      - run: mv $CIRCLE_WORKING_DIRECTORY/ci_build.sh $(npm config get prefix)/bin/elm-make
+
       - run: npm test
       - run:
           name: Build dist files
-          command: npm run build
+          command: echo $LIBSYSCONFCPUS && npm run build
           no_output_timeout: 1h
 
       - save_cache:
