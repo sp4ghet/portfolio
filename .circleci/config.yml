@@ -49,8 +49,8 @@ jobs:
       - run: npm install elm-github-install
       - run: npx elm-github-install
 
-      - run: mv $(npm config get prefix)/bin/elm-make $(npm config get prefix)/bin/elm-make-old
-      - run: mv $CIRCLE_WORKING_DIRECTORY/ci_build.sh $(npm config get prefix)/bin/elm-make
+      - run: mv ./node_modules/.bin/elm-make ./node_modules/.bin/elm-make-old
+      - run: mv $CIRCLE_WORKING_DIRECTORY/ci_build.sh ./node_modules/.bin/elm-make
 
       - run: npm test
       - run:
