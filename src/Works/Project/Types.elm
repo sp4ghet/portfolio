@@ -27,3 +27,4 @@ type Content
     | Picture String
     | Video String
     | Youtube String
+    | Instagram String

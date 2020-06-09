@@ -1,16 +1,16 @@
-module State exposing (init, update, subscriptions)
+module State exposing (init, subscriptions, update)
 
-import Top.State as Top
-import Works.State as Works
-import Works.Project.State as Project
 import About.State as About
-import Blog.State as BlogState
 import Blog.Article.State as Article
-import List.Extra exposing (replaceIf, find)
+import Blog.State as BlogState
 import Common.Ports exposing (reloadInsta)
-import Types exposing (..)
-import Routing exposing (parseLocation)
+import List.Extra exposing (find, replaceIf)
 import Navigation exposing (Location)
+import Routing exposing (parseLocation)
+import Top.State as Top
+import Types exposing (..)
+import Works.Project.State as Project
+import Works.State as Works
 
 
 init : Location -> ( Model, Cmd msg )
@@ -19,21 +19,21 @@ init location =
         route =
             parseLocation location
     in
-        let
-            model =
-                Model
-                    Top.init
-                    Works.init
-                    About.init
-                    BlogState.init
-                    route
-        in
-            case route of
-                Blog articleId ->
-                    ( model, reloadInsta "init" )
+    let
+        model =
+            Model
+                Top.init
+                Works.init
+                About.init
+                BlogState.init
+                route
+    in
+    case route of
+        Blog articleId ->
+            ( model, reloadInsta "init" )
 
-                _ ->
-                    ( model, Cmd.none )
+        _ ->
+            ( model, Cmd.none )
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -44,57 +44,60 @@ update msg model =
                 newRoute =
                     parseLocation location
             in
-                case newRoute of
-                    Blog articleId ->
-                        ( { model | route = newRoute }, reloadInsta "newRoute" )
+            case newRoute of
+                Blog _ ->
+                    ( { model | route = newRoute }, reloadInsta "blog" )
 
-                    _ ->
-                        ( { model | route = newRoute }, Cmd.none )
+                Work _ ->
+                    ( { model | route = newRoute }, reloadInsta "works" )
+
+                _ ->
+                    ( { model | route = newRoute }, Cmd.none )
 
         TopMsg message ->
             let
                 ( topModel, topCmd ) =
                     Top.update message model.top
             in
-                ( { model | top = topModel }, Cmd.map TopMsg topCmd )
+            ( { model | top = topModel }, Cmd.map TopMsg topCmd )
 
         WorksMsg message ->
             let
                 ( worksModel, worksCmd ) =
                     Works.update message model.works
             in
-                ( { model | works = worksModel }, Cmd.map WorksMsg worksCmd )
+            ( { model | works = worksModel }, Cmd.map WorksMsg worksCmd )
 
         ProjectMsg message ->
             case model.route of
                 Work projectId ->
                     let
                         predicate =
-                            (\x -> x.project.id == projectId)
+                            \x -> x.project.id == projectId
 
                         projectMaybe =
                             find predicate model.works.projects
                     in
-                        case projectMaybe of
-                            Just project ->
-                                let
-                                    ( projectModel, projectCmd ) =
-                                        Project.update message project
+                    case projectMaybe of
+                        Just project ->
+                            let
+                                ( projectModel, projectCmd ) =
+                                    Project.update message project
 
-                                    -- TODO: This makes the ordering of work in the "Works" page different when you return after viewing a project page
-                                    newProjects =
-                                        replaceIf predicate projectModel model.works.projects
+                                -- TODO: This makes the ordering of work in the "Works" page different when you return after viewing a project page
+                                newProjects =
+                                    replaceIf predicate projectModel model.works.projects
 
-                                    oldWorks =
-                                        model.works
+                                oldWorks =
+                                    model.works
 
-                                    newWorks =
-                                        { oldWorks | projects = newProjects }
-                                in
-                                    ( { model | works = newWorks }, Cmd.map ProjectMsg projectCmd )
+                                newWorks =
+                                    { oldWorks | projects = newProjects }
+                            in
+                            ( { model | works = newWorks }, Cmd.map ProjectMsg projectCmd )
 
-                            Nothing ->
-                                ( model, Cmd.none )
+                        Nothing ->
+                            ( model, Cmd.none )
 
                 _ ->
                     ( model, Cmd.none )
@@ -104,44 +107,44 @@ update msg model =
                 ( aboutModel, aboutCmd ) =
                     About.update message model.about
             in
-                ( { model | about = aboutModel }, Cmd.map AboutMsg aboutCmd )
+            ( { model | about = aboutModel }, Cmd.map AboutMsg aboutCmd )
 
         BlogMsg message ->
             let
                 ( blogModel, blogCmd ) =
                     BlogState.update message model.blog
             in
-                ( { model | blog = blogModel }, Cmd.map BlogMsg blogCmd )
+            ( { model | blog = blogModel }, Cmd.map BlogMsg blogCmd )
 
         ArticleMsg message ->
             case model.route of
                 Blog blogId ->
                     let
                         predicate =
-                            (\x -> x.article.id == blogId)
+                            \x -> x.article.id == blogId
 
                         blogMaybe =
                             find predicate model.blog.articles
                     in
-                        case blogMaybe of
-                            Just article ->
-                                let
-                                    ( articleModel, articleCmd ) =
-                                        Article.update message article
+                    case blogMaybe of
+                        Just article ->
+                            let
+                                ( articleModel, articleCmd ) =
+                                    Article.update message article
 
-                                    newArticles =
-                                        replaceIf predicate articleModel model.blog.articles
+                                newArticles =
+                                    replaceIf predicate articleModel model.blog.articles
 
-                                    oldBlog =
-                                        model.blog
+                                oldBlog =
+                                    model.blog
 
-                                    newBlog =
-                                        { oldBlog | articles = newArticles }
-                                in
-                                    ( { model | blog = newBlog }, Cmd.map ArticleMsg articleCmd )
+                                newBlog =
+                                    { oldBlog | articles = newArticles }
+                            in
+                            ( { model | blog = newBlog }, Cmd.map ArticleMsg articleCmd )
 
-                            Nothing ->
-                                ( model, Cmd.none )
+                        Nothing ->
+                            ( model, Cmd.none )
 
                 _ ->
                     ( model, Cmd.none )

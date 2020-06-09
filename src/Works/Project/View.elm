@@ -2,11 +2,11 @@ module Works.Project.View exposing (root)
 
 import Common.Styling exposing (..)
 import Common.ViewComponents exposing (..)
-import Works.Project.Types exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Json.Encode as Encode
-import Markdown
+import MarkdownMath
+import Works.Project.Types exposing (..)
 
 
 root : Model -> Html Msg
@@ -48,7 +48,7 @@ render content =
         rendered =
             case content of
                 Description markdown ->
-                    Markdown.toHtml [ class "is-size-5-desktop" ] markdown
+                    MarkdownMath.toHtml [ class "is-size-5-desktop" ] markdown
 
                 Picture imgUrl ->
                     img
@@ -85,13 +85,25 @@ render content =
                             ]
                             []
                         ]
+
+                Instagram postId ->
+                    div [ class "insta-container" ]
+                        [ div [ class "insta-wrapper" ]
+                            [ blockquote
+                                [ class "instagram-media"
+                                , attribute "data-instgrm-permalink" <| "https://www.instagram.com/p/" ++ postId ++ "/"
+                                , attribute "data-instgrm-version" "12"
+                                ]
+                                []
+                            ]
+                        ]
     in
-        div
-            [ class "content"
-            , class "container"
-            , style
-                [ ( "width", "80%" )
-                ]
+    div
+        [ class "content"
+        , class "container"
+        , style
+            [ ( "width", "80%" )
             ]
-            [ rendered
-            ]
+        ]
+        [ rendered
+        ]
